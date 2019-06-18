@@ -1,0 +1,6 @@
+<div>
+  <span>Primary School Registration Data</span>
+  <br>
+  <button md-button (click)="authService.signIn()" *ngIf="!authService.authenticated()">Sign In</button>
+  <button md-button (click)="authService.signOut()" *ngIf="authService.authenticated()">Sign Out</button>
+</div>
