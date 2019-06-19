@@ -19,8 +19,5 @@ export const SCHOOLS: School[] = [
   { id: 16, name: 'Bukit Panjang Primary School', year: 2019, availableVacancies: 240, postalCode:679676, grc:'Holland-Bukit Timah GRC' },
   { id: 17, name: 'Bukit Timah Primary School', year: 2019, availableVacancies: 180, postalCode:598112, grc:'Holland-Bukit Timah GRC' },
   { id: 18, name: 'Bukit View Primary School', year: 2019, availableVacancies: 180, postalCode:659634, grc:'Bukit Batok' },
-  { id: 19, name: 'Canberra Primary School', year: 2019, availableVacancies: 210, postalCode:757714, grc:'Sembawang GRC' },
-  { id: 20, name: 'Canossa Catholic Primary School', year: 2019, availableVacancies: 120, postalCode:387621, grc:'MacPherson' },
-  { id: 21, name: 'Cantonment Primary School', year: 2019, availableVacancies: 180, postalCode:088256, grc:'Tanjong Pagar GRC' },
-  { id: 21, name: 'Nanyang Primary School', year: 2019, availableVacancies: 390, postalCode:268097, grc:'Holland-Bukit Timah GRC' },
+  { id: 19, name: 'Nanyang Primary School', year: 2019, availableVacancies: 390, postalCode:268097, grc:'Holland-Bukit Timah GRC'}
 ];
