@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 import { AuthService } from './auth.service';
+import { SchoolListComponent } from './school-list/school-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent
+    NavBarComponent,
+    SchoolListComponent
   ],
   imports: [
     BrowserModule
