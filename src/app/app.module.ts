@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 import { AuthService } from './auth.service';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -13,9 +12,7 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
     NavBarComponent
   ],
   imports: [
-    BrowserModule,
-    MatButtonModule, 
-    MatCheckboxModule
+    BrowserModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
