@@ -1,3 +1,11 @@
-<p>
-  school-list works!
-</p>
+
+<ul class="schools">
+  <li *ngFor="let school of schools">
+    <div class="row">
+        <div class="col-sm">{{school.name}}</div>
+        <div class="col-sm">{{school.availableVacancies}}</div>
+        <div class="col-sm"></div>
+        <div class="col-sm"></div>
+    </div>
+  </li>
+</ul>
