@@ -1,10 +1,1 @@
 <app-nav-bar></app-nav-bar>
-
-<div class="app-container">
-  <div *ngIf="!authService.authenticated()">
-    <div>Hello, visitor.</div>
-    <div>
-      Please <button> <a (click)="authService.signIn()">sign in</a> </button>to manage your task list.
-    </div>
-  </div>
-</div>
