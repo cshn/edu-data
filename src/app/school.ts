@@ -3,4 +3,6 @@ export class School {
     name: string;
     year: number;
     availableVacancies: number;
+    postalCode: number;
+    grc: string;
   }
