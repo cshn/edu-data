@@ -1,17 +1,18 @@
-
-<ul class="schools">
+<div class="container content"> 
+  <ul class="schools">
     <div class="row">
-        <div class="col-sm">School Name (>=240)</div>
-        <div class="col-1">Availability</div>
-        <div class="col-1">Registration</div>
-        <div class="col-sm">Phase</div>
+          <div class="col-sm">School (>=240)</div>
+          <div class="col-sm">Availability</div>
+          <div class="col-sm">Registration</div>
+          <div class="col-sm">Phase</div>
     </div>
-  <li *ngFor="let school of schools">
-    <div class="row">
-        <div class="col-sm">{{school.school}}</div>
-        <div class="col-1">{{school.availability}}</div>
-        <div class="col-1">{{school.registration}}</div>
-        <div class="col-sm">{{school.phase}}</div>
-    </div>
-  </li>
-</ul>
+    <li *ngFor="let school of schools">
+      <div class="row">
+          <div class="col-sm">{{school.school}}</div>
+          <div class="col-sm">{{school.availability}}</div>
+          <div class="col-sm">{{school.registration}}</div>
+          <div class="col-sm">{{school.phase}}</div>
+      </div>
+    </li>
+  </ul>
+</div>
