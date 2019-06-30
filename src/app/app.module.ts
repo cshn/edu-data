@@ -3,22 +3,28 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { FilterPipe} from './filter.pipe';
 
 import { AuthService } from './auth.service';
 import { SchoolListComponent } from './school-list/school-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
+import { SchoolSearchComponent } from './school-search/school-search.component';
+import { FormsModule } from '@angular/forms'; 
 
 @NgModule({
   declarations: [
     AppComponent,
+    FilterPipe,
     NavBarComponent,
-    SchoolListComponent
+    SchoolListComponent,
+    SchoolSearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

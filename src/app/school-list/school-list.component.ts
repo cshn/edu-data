@@ -9,6 +9,7 @@ import { SchoolListService } from './school-list.service';
 })
 export class SchoolListComponent implements OnInit {
   schools: School[];
+  searchtext: string;
 
   constructor(private schoolListService: SchoolListService) { }
 
