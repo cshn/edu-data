@@ -1,8 +1,8 @@
 export class School {
-    id: number;
-    name: string;
+    _id: string;
     year: number;
-    availableVacancies: number;
-    postalCode: number;
-    grc: string;
+    phase: number;
+    school: string;
+    availability: number;
+    registration: number;
   }

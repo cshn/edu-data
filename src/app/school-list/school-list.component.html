@@ -1,12 +1,17 @@
 
 <ul class="schools">
+    <div class="row">
+        <div class="col-sm">School Name (>=240)</div>
+        <div class="col-1">Availability</div>
+        <div class="col-1">Registration</div>
+        <div class="col-sm">Phase</div>
+    </div>
   <li *ngFor="let school of schools">
     <div class="row">
-        <div class="col-sm">{{school.name}}</div>
-        <div class="col-1">{{school.availableVacancies}}</div>
-        <div class="col-sm">{{school.grc}}</div>
-        <div class="col-sm"></div>
-        <div class="col-sm"></div>
+        <div class="col-sm">{{school.school}}</div>
+        <div class="col-1">{{school.availability}}</div>
+        <div class="col-1">{{school.registration}}</div>
+        <div class="col-sm">{{school.phase}}</div>
     </div>
   </li>
 </ul>
