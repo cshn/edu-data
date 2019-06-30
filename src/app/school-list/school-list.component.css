@@ -1,0 +1,12 @@
+.formtitle {
+    color: blue;
+    font-weight: bold;
+  }
+
+.school {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
