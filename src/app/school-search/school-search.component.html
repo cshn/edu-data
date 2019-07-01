@@ -1,3 +1,18 @@
-<p>
-  school-search works!
-</p>
+<div class="container content">
+  <input type="text" placeholder="Search School..." [(ngModel)]="searchtext"> 
+  <button (click)="goBack()">go back</button> 
+    <ul class="schools">
+        <div class="row">
+              <div class="col-sm formtitle">Schools (>= 240)</div>
+              <div class="col-sm formtitle">Availability</div>
+              <div class="col-sm formtitle">Registration</div>
+        </div>
+        <li *ngFor="let school of schools | filter : searchtext">
+          <div class="row">
+              <div class="col-sm school">{{school.school}}</div>
+              <div class="col-sm">{{school.availability}}</div>
+              <div class="col-sm">{{school.registration}}</div>
+          </div>
+        </li>
+    </ul>
+</div>

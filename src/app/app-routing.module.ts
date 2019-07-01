@@ -5,10 +5,10 @@ import { SchoolSearchComponent }      from './school-search/school-search.compon
 import { DashboardComponent }      from './dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/schools', pathMatch: 'full' },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'schools', component: SchoolListComponent },
-  { path: 'schools/:phaseId', component: SchoolSearchComponent }
+  { path: 'schools/:phaseid', component: SchoolSearchComponent }
 ];
 
 @NgModule({

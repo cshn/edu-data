@@ -16,12 +16,9 @@ export class SchoolListService {
     return this.http.get<School[]>(this.schoolsUrl);
   }
 
-  getSchoolsByPhase(phaseId: number): Observable<School> {
+  getSchoolsByPhase(phaseId: number): Observable<School[]> {
     const url = `${this.schoolsUrl}/${phaseId}`;
-    return this.http.get<School>(url).pipe(
-      tap(_ => this.log(`fetched school by phase id=${phaseId}`)),
-      catchError(this.handleError<School>(`getSchoolsByPhase id=${phaseId}`))
-    );
+    return this.http.get<School[]>(url);
   }
 
   private handleError<T> (operation = 'operation', result?: T) {
