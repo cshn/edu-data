@@ -12,6 +12,7 @@ import { SchoolListService }  from '../school-list/school-list.service';
 export class SchoolSearchComponent implements OnInit {
 
   schools: School[];
+  searchtext: string;
 
   constructor(
     private route: ActivatedRoute,
