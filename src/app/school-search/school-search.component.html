@@ -1,18 +1,22 @@
-<div class="container content">
+<div class="container-fluid">
   <input type="text" placeholder="Search School..." [(ngModel)]="searchtext"> 
-  <button (click)="goBack()">go back</button> 
-    <ul class="schools">
-        <div class="row">
-              <div class="col-sm formtitle">Schools (>= 240)</div>
-              <div class="col-sm formtitle">Availability</div>
-              <div class="col-sm formtitle">Registration</div>
-        </div>
-        <li *ngFor="let school of schools | filter : searchtext">
-          <div class="row">
-              <div class="col-sm school">{{school.school}}</div>
-              <div class="col-sm">{{school.availability}}</div>
-              <div class="col-sm">{{school.registration}}</div>
-          </div>
-        </li>
-    </ul>
+  <button (click)="goBack()">go back</button>
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th>Schools (>= 240)</th>
+          <th>Availability</th>
+          <th>Registration</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let school of schools | filter : searchtext">
+        <tr>
+          <td class="school">{{school.school}}</td>
+          <td>{{school.availability}}</td>
+          <td>{{school.registration}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>  
 </div>
