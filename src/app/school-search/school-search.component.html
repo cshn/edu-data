@@ -12,7 +12,8 @@
       </thead>
       <tbody *ngFor="let school of schools | filter : searchtext">
         <tr>
-          <td class="school">{{school.school}}</td>
+          <ng-template #tipContent><b>{{school.school}}</b>!</ng-template>
+          <td><span [ngbTooltip]="tipContent">{{school.school.substring(0,15)}}</span></td>
           <td>{{school.availability}}</td>
           <td>{{school.registration}}</td>
         </tr>
