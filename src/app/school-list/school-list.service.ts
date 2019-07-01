@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { School } from '../school';
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class SchoolListService {
   private schoolsUrl = 'https://murmuring-cove-54677.herokuapp.com/schoollist';  // URL to web api
   constructor(private http: HttpClient) { }
@@ -14,4 +16,30 @@ export class SchoolListService {
     return this.http.get<School[]>(this.schoolsUrl);
   }
 
+  getSchoolsByPhase(phaseId: number): Observable<School> {
+    const url = `${this.schoolsUrl}/${phaseId}`;
+    return this.http.get<School>(url).pipe(
+      tap(_ => this.log(`fetched school by phase id=${phaseId}`)),
+      catchError(this.handleError<School>(`getSchoolsByPhase id=${phaseId}`))
+    );
+  }
+
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+   
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+   
+      // TODO: better job of transforming error for user consumption
+      this.log(`${operation} failed: ${error.message}`);
+   
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
+
+  private log(message: string) {
+    console.log(`HeroService: ${message}`);
+  }
+  
 }

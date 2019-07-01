@@ -1,9 +1,14 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SchoolListComponent }      from './school-list/school-list.component';
+import { SchoolSearchComponent }      from './school-search/school-search.component';
+import { DashboardComponent }      from './dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: 'schools', component: SchoolListComponent }
+  { path: '', redirectTo: '/schools', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'schools', component: SchoolListComponent },
+  { path: 'schools/:phaseId', component: SchoolSearchComponent }
 ];
 
 @NgModule({

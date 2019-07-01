@@ -10,7 +10,8 @@ import { SchoolListComponent } from './school-list/school-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
 import { SchoolSearchComponent } from './school-search/school-search.component';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component'; 
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     FilterPipe,
     NavBarComponent,
     SchoolListComponent,
-    SchoolSearchComponent
+    SchoolSearchComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
