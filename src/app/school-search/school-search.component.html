@@ -6,9 +6,8 @@
       <thead>
         <tr>
           <th>Schools (>= 240)</th>
-          <ng-template #tipAvail>Availability in current phase</ng-template>
-          <th><span [ngbTooltip]="tipAvail">Availability</span></th>
-          <th><span [ngbTooltip]="tipReg">Registered</span></th>
+          <th></th>
+          <th>Registered</th>
         </tr>
       </thead>
       <tbody *ngFor="let school of schools | filter : searchtext">
