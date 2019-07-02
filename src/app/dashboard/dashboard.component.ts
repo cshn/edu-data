@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Phase } from './phase';
+import { PHASE_STATIC } from './phase-static';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,11 +9,7 @@ import { Phase } from './phase';
 })
 export class DashboardComponent implements OnInit {
 
-  phases: Phase[] = [  { id: 1, name: '1' },
-    { id: 2, name: '2A(1)' },{id: 3, name: '2A(2)' },
-    { id: 4, name: '2B' },{id: 5, name: '2C' },
-    { id: 6, name: '2CS' },{ id: 7, name: '3' }
-  ];
+  phases: Phase[] = PHASE_STATIC;
 
   constructor() { }
 
