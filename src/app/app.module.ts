@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FilterPipe} from './filter.pipe';
 
-import { AuthService } from './auth.service';
 import { SchoolListComponent } from './school-list/school-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
@@ -30,7 +29,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     NgbModule
   ],
-  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

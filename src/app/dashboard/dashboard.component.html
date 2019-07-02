@@ -2,7 +2,29 @@
   <a *ngFor="let phase of phases" class="col-1-4"
       routerLink="/schools/{{phase.id}}">
     <div class="module">
-      <h4>{{phase.name}}</h4>
+      <h6>{{phase.name}}</h6>
     </div>
   </a>
+</div>
+
+<div class="col p-4 d-flex flex-column position-static">
+    <strong class="text-primary">Phase 1</strong>
+    <p class="card-text">You have another child currently studying at your preferred school.</p>
+    <strong class="text-primary">Phase 2A(1)</strong>
+    <p class="card-text mb-auto">You are a former student of your preferred school, and have signed up as a member of the alumni association before 1 July 2018.</p>
+    <p class="card-text">You are a member of the Advisory or Management Committee of your preferred school.</p>
+    <strong class="text-primary">Phase 2A(2)</strong>
+    <p class="card-text mb-auto">You or another child of yours have previously studied in your preferred school.</p>
+    <p class="card-text mb-auto">You are a staff member of the school.</p>
+    <p class="card-text">Your child is currently in the MOE Kindergarten located within your preferred school.</p>
+    <strong class="text-primary">Phase 2B</strong>
+    <p class="card-text mb-auto">You are a parent volunteer at the school, starting before 1 July 2018 and completing at least 40 hours of service by 30 June 2019.</p>
+    <p class="card-text mb-auto">You are a member endorsed by the church or clan directly connected to the school.</p>
+    <p class="card-text">You are endorsed as an active community leader.</p>
+    <strong class="text-primary">Phase 2C</strong>
+    <p class="card-text mb-auto">Singapore Citizen and PR</p>
+    <strong class="text-primary">Phase 2CS</strong>
+    <p class="card-text mb-auto">Singapore Citizen and PR</p>
+    <strong class="text-primary">Phase 3</strong>
+    <p class="card-text mb-auto">All Foreigners</p>
 </div>
