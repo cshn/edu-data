@@ -7,15 +7,13 @@
         <tr>
           <th>Schools (>= 240)</th>
           <ng-template #tipAvail>Availability in current phase</ng-template>
-          <th><span [ngbTooltip]="tipAvail">Avail</span></th>
-          <ng-template #tipReg>Number of students registered</ng-template>
-          <th><span [ngbTooltip]="tipReg">Reg</span></th>
+          <th><span [ngbTooltip]="tipAvail">Availability</span></th>
+          <th><span [ngbTooltip]="tipReg">Registered</span></th>
         </tr>
       </thead>
       <tbody *ngFor="let school of schools | filter : searchtext">
         <tr>
-          <ng-template #tipContent>{{school.school}}</ng-template>
-          <td><span [ngbTooltip]="tipContent">{{school.school.substring(0,16)}}</span></td>
+          <td>{{school.school}}</td>
           <td>{{school.availability}}</td>
           <td>{{school.registration}}</td>
         </tr>
