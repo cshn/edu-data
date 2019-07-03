@@ -13,8 +13,8 @@ import { SchoolListService }  from '../school-list/school-list.service';
 export class SchoolSearchComponent implements OnInit {
 
   schools: School[];
-  gepSchools: string[] = ['Tao Nan School'];
   searchtext: string;
+  schoolTag: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,6 +30,14 @@ export class SchoolSearchComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('phaseid');
     this.schoolListService.getSchoolsByPhase(id)
       .subscribe(schools => this.schools = schools);
+    this.schoolTag = 'School (>=240)';
+  }
+
+  getSmallerSchools(): void {
+    const id = +this.route.snapshot.paramMap.get('phaseid');
+    this.schoolListService.getSmallerSchoolsByPhase(id, 130)
+      .subscribe(schools => this.schools = schools);
+    this.schoolTag = 'School (<240)';
   }
 
   keeyGepSchoolsOnly(): void {

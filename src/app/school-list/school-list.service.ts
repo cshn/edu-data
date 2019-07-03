@@ -20,6 +20,10 @@ export class SchoolListService {
     const url = `${this.schoolsUrl}/${phaseId}`;
     return this.http.get<School[]>(url);
   }
+  getSmallerSchoolsByPhase(phaseId: number, minSize: number): Observable<School[]> {
+    const url = `${this.schoolsUrl}/${phaseId}/${minSize}`;
+    return this.http.get<School[]>(url);
+  }
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

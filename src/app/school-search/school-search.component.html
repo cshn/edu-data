@@ -1,13 +1,14 @@
 <div class="container-fluid">
   <input class="form-control" type="text" placeholder="Search School..." [(ngModel)]="searchtext"> 
   <button (click)="keeyGepSchoolsOnly()">GEP Schools</button>
-  <button (click)="getSchools()">All Schools</button>
+  <button (click)="getSchools()">Bigger Schools</button>
+  <button (click)="getSmallerSchools()">Smaller Schools</button>
   <button (click)="goBack()">go back</button>
   <div class="table-responsive">
     <table class="table table-striped table-sm">
       <thead>
         <tr>
-          <th>Schools (>= 240)</th>
+          <th>{{schoolTag}}</th>
           <th>Availability</th>
           <th>Registered</th>
           <th>Hot %</th>
