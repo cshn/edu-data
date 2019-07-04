@@ -35,7 +35,7 @@ export class SchoolSearchComponent implements OnInit {
 
   getSmallerSchools(): void {
     const id = +this.route.snapshot.paramMap.get('phaseid');
-    this.schoolListService.getSmallerSchoolsByPhase(id, 130)
+    this.schoolListService.getSmallerSchoolsByPhase(id, 181)
       .subscribe(schools => this.schools = schools);
     this.schoolTag = 'School (<240)';
   }

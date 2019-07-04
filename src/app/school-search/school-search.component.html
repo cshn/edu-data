@@ -9,6 +9,7 @@
       <thead>
         <tr>
           <th>{{schoolTag}}</th>
+          <th>Size</th>
           <th>Availability</th>
           <th>Registered</th>
           <th>Hot %</th>
@@ -17,6 +18,7 @@
       <tbody *ngFor="let school of schools | filter : searchtext">
         <tr>
           <td>{{school.school}}</td>
+          <td>{{school.size}}</td>
           <td>{{school.availability}}</td>
           <td>{{school.registration}}</td>
           <td>{{school.registration/school.availability | percent:'.1'}}</td>

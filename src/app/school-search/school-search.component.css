@@ -23,8 +23,8 @@ button {
     border-radius: 3px;
     cursor: pointer;
     cursor: hand;
-    margin-right: 6px;
-    margin-left: 6px;
+    margin-right: 2px;
+    margin-left: 2px;
   }
 button:hover {
     background-color: #cfd8dc;
