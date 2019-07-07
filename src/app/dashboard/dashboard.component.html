@@ -1,6 +1,18 @@
-<div class="grid grid-pad">
-  <a *ngFor="let phase of phases" class="col-1-4"
-      routerLink="/schools/{{phase.id}}">
+
+
+
+<div class="col-md-4 themed-grid-col">
+  <h5 class="moduletitle">2019</h5>
+  <a *ngFor="let phase of phases" routerLink="/schools/2019/{{phase.id}}">
+    <div class="module">
+      <h6>{{phase.name}}</h6>
+    </div>
+  </a>
+</div>
+
+<div class="col-md-4 themed-grid-col">
+  <h5 class="moduletitle">2018</h5>
+  <a *ngFor="let phase of phases" routerLink="/schools/2018/{{phase.id}}">
     <div class="module">
       <h6>{{phase.name}}</h6>
     </div>
