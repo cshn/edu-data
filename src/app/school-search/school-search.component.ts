@@ -28,14 +28,14 @@ export class SchoolSearchComponent implements OnInit {
 
   getSchools(): void {
     const id = +this.route.snapshot.paramMap.get('phaseid');
-    this.schoolListService.getSchoolsByPhase(id)
+    this.schoolListService.getSchoolsByPhase(2019,id)
       .subscribe(schools => this.schools = schools);
     this.schoolTag = 'School (>=240)';
   }
 
   getSmallerSchools(): void {
     const id = +this.route.snapshot.paramMap.get('phaseid');
-    this.schoolListService.getSmallerSchoolsByPhase(id, 181)
+    this.schoolListService.getSmallerSchoolsByPhase(2019,id,181)
       .subscribe(schools => this.schools = schools);
     this.schoolTag = 'School (<240)';
   }

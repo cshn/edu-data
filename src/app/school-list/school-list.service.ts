@@ -16,13 +16,13 @@ export class SchoolListService {
     return this.http.get<School[]>(this.schoolsUrl);
   }
 
-  getSchoolsByPhase(phaseId: number): Observable<School[]> {
-    const url = `${this.schoolsUrl}/${phaseId}`;
+  getSchoolsByPhase(year: number, phaseId: number): Observable<School[]> {
+    const url = `${this.schoolsUrl}/${year}/${phaseId}`;
     return this.http.get<School[]>(url);
   }
   
-  getSmallerSchoolsByPhase(phaseId: number, minSize: number): Observable<School[]> {
-    const url = `${this.schoolsUrl}/${phaseId}/${minSize}`;
+  getSmallerSchoolsByPhase(year: number, phaseId: number, minSize: number): Observable<School[]> {
+    const url = `${this.schoolsUrl}/${year}/${phaseId}/${minSize}`;
     return this.http.get<School[]>(url);
   }
 
