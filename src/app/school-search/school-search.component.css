@@ -17,15 +17,26 @@ input {
   }
 button {
     font-family: Arial;
-    background-color: rgb(189, 172, 172);
-    border: 2px solid rgb(189, 172, 172);
+    color: #eee;
+    background-color:#3f525c;;
     padding: 5px 10px;
     border-radius: 3px;
     cursor: pointer;
     cursor: hand;
-    margin-right: 2px;
-    margin-left: 2px;
+    margin-right: 1px;
+    margin-left: 1px;
   }
+.gobackbutton {
+    font-family: Arial;
+    color: #eee;
+    background-color:#3f525c;;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    cursor: hand;
+    margin-right: 1px;
+    margin-left: 1px;
+}
 button:hover {
     background-color: #cfd8dc;
   }
