@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { School } from '../school';
-import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -18,11 +17,6 @@ export class SchoolListService {
 
   getSchoolsByPhase(year: number, phaseId: number): Observable<School[]> {
     const url = `${this.schoolsUrl}/${year}/${phaseId}`;
-    return this.http.get<School[]>(url);
-  }
-  
-  getSmallerSchoolsByPhase(year: number, phaseId: number, minSize: number): Observable<School[]> {
-    const url = `${this.schoolsUrl}/${year}/${phaseId}/${minSize}`;
     return this.http.get<School[]>(url);
   }
 
