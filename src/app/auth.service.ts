@@ -16,7 +16,7 @@ export class AuthService {
   config = {
     domain: "dev-901borqw.au.auth0.com",
     client_id: "m1y7SlpDa88OQLQAB6FyLMrI2YCo0rdd",
-    redirect_uri: `${window.location.origin}/callback`
+    redirect_uri: `${window.location.origin}/edu-data/callback`
   };
 
   /**
