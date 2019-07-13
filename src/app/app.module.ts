@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CallbackComponent } from './callback/callback.component';
 import { ProfileComponent } from './profile/profile.component';
+import { DashboardSchoolComponent } from './dashboard-school/dashboard-school.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProfileComponent } from './profile/profile.component';
     SchoolSearchComponent,
     DashboardComponent,
     CallbackComponent,
-    ProfileComponent
+    ProfileComponent,
+    DashboardSchoolComponent
   ],
   imports: [
     BrowserModule,

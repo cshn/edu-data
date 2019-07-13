@@ -1,123 +1,147 @@
 
-
-
-<div class="col-md-4 themed-grid-col">
-  <h5 class="moduletitle">2019</h5>
-  <a *ngFor="let phase of phases" routerLink="/schools/2019/{{phase.id}}">
-    <div class="module">
-      <h6>{{phase.name}}</h6>
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/dashboard">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+            By Year <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboardschool">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+            By School
+          </a>
+        </li>
+      </ul>
     </div>
-  </a>
-</div>
+</nav>
 
-<div class="col-md-4 themed-grid-col">
-  <h5 class="moduletitle">2018</h5>
-  <a *ngFor="let phase of phases" routerLink="/schools/2018/{{phase.id}}">
-    <div class="module">
-      <h6>{{phase.name}}</h6>
-    </div>
-  </a>
-</div>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h3>By Year (2009 - 2019)</h3>
+  </div>
 
-<div class="col-md-4 themed-grid-col">
-    <h5 class="moduletitle">2017</h5>
-    <a *ngFor="let phase of phases" routerLink="/schools/2017/{{phase.id}}">
+  <div class="col-md-4 themed-grid-col">
+    <h5 class="moduletitle">2019</h5>
+    <a *ngFor="let phase of phases" routerLink="/schools/2019/{{phase.id}}">
       <div class="module">
         <h6>{{phase.name}}</h6>
       </div>
     </a>
-</div>
+  </div>
 
-<div class="col-md-4 themed-grid-col">
-    <h5 class="moduletitle">2016</h5>
-    <a *ngFor="let phase of phases" routerLink="/schools/2016/{{phase.id}}">
+  <div class="col-md-4 themed-grid-col">
+    <h5 class="moduletitle">2018</h5>
+    <a *ngFor="let phase of phases" routerLink="/schools/2018/{{phase.id}}">
       <div class="module">
         <h6>{{phase.name}}</h6>
       </div>
     </a>
-</div>
+  </div>
 
-<div class="col-md-4 themed-grid-col">
-    <h5 class="moduletitle">2015</h5>
-    <a *ngFor="let phase of phases" routerLink="/schools/2015/{{phase.id}}">
-      <div class="module">
-        <h6>{{phase.name}}</h6>
-      </div>
-    </a>
-</div>
+  <div class="col-md-4 themed-grid-col">
+      <h5 class="moduletitle">2017</h5>
+      <a *ngFor="let phase of phases" routerLink="/schools/2017/{{phase.id}}">
+        <div class="module">
+          <h6>{{phase.name}}</h6>
+        </div>
+      </a>
+  </div>
 
-<div class="col-md-4 themed-grid-col">
-    <h5 class="moduletitle">2014</h5>
-    <a *ngFor="let phase of phases" routerLink="/schools/2014/{{phase.id}}">
-      <div class="module">
-        <h6>{{phase.name}}</h6>
-      </div>
-    </a>
-</div>
+  <div class="col-md-4 themed-grid-col">
+      <h5 class="moduletitle">2016</h5>
+      <a *ngFor="let phase of phases" routerLink="/schools/2016/{{phase.id}}">
+        <div class="module">
+          <h6>{{phase.name}}</h6>
+        </div>
+      </a>
+  </div>
 
-<div class="col-md-4 themed-grid-col">
-    <h5 class="moduletitle">2013</h5>
-    <a *ngFor="let phase of phases" routerLink="/schools/2013/{{phase.id}}">
-      <div class="module">
-        <h6>{{phase.name}}</h6>
-      </div>
-    </a>
-</div>
+  <div class="col-md-4 themed-grid-col">
+      <h5 class="moduletitle">2015</h5>
+      <a *ngFor="let phase of phases" routerLink="/schools/2015/{{phase.id}}">
+        <div class="module">
+          <h6>{{phase.name}}</h6>
+        </div>
+      </a>
+  </div>
 
-<div class="col-md-4 themed-grid-col">
-    <h5 class="moduletitle">2012</h5>
-    <a *ngFor="let phase of phases" routerLink="/schools/2012/{{phase.id}}">
-      <div class="module">
-        <h6>{{phase.name}}</h6>
-      </div>
-    </a>
-</div>
+  <div class="col-md-4 themed-grid-col">
+      <h5 class="moduletitle">2014</h5>
+      <a *ngFor="let phase of phases" routerLink="/schools/2014/{{phase.id}}">
+        <div class="module">
+          <h6>{{phase.name}}</h6>
+        </div>
+      </a>
+  </div>
 
-<div class="col-md-4 themed-grid-col">
-    <h5 class="moduletitle">2011</h5>
-    <a *ngFor="let phase of phases" routerLink="/schools/2011/{{phase.id}}">
-      <div class="module">
-        <h6>{{phase.name}}</h6>
-      </div>
-    </a>
-</div>
+  <div class="col-md-4 themed-grid-col">
+      <h5 class="moduletitle">2013</h5>
+      <a *ngFor="let phase of phases" routerLink="/schools/2013/{{phase.id}}">
+        <div class="module">
+          <h6>{{phase.name}}</h6>
+        </div>
+      </a>
+  </div>
 
-<div class="col-md-4 themed-grid-col">
-    <h5 class="moduletitle">2010</h5>
-    <a *ngFor="let phase of phases" routerLink="/schools/2010/{{phase.id}}">
-      <div class="module">
-        <h6>{{phase.name}}</h6>
-      </div>
-    </a>
-</div>
+  <div class="col-md-4 themed-grid-col">
+      <h5 class="moduletitle">2012</h5>
+      <a *ngFor="let phase of phases" routerLink="/schools/2012/{{phase.id}}">
+        <div class="module">
+          <h6>{{phase.name}}</h6>
+        </div>
+      </a>
+  </div>
 
-<div class="col-md-4 themed-grid-col">
-    <h5 class="moduletitle">2009</h5>
-    <a *ngFor="let phase of phases" routerLink="/schools/2010/{{phase.id}}">
-      <div class="module">
-        <h6>{{phase.name}}</h6>
-      </div>
-    </a>
-</div>
+  <div class="col-md-4 themed-grid-col">
+      <h5 class="moduletitle">2011</h5>
+      <a *ngFor="let phase of phases" routerLink="/schools/2011/{{phase.id}}">
+        <div class="module">
+          <h6>{{phase.name}}</h6>
+        </div>
+      </a>
+  </div>
 
-<div class="col p-4 d-flex flex-column position-static">
-    <strong class="text-primary">Phase 1</strong>
-    <p class="card-text">You have another child currently studying at your preferred school.</p>
-    <strong class="text-primary">Phase 2A(1)</strong>
-    <p class="card-text mb-auto">You are a former student of your preferred school, and have signed up as a member of the alumni association before 1 July 2018.</p>
-    <p class="card-text">You are a member of the Advisory or Management Committee of your preferred school.</p>
-    <strong class="text-primary">Phase 2A(2)</strong>
-    <p class="card-text mb-auto">You or another child of yours have previously studied in your preferred school.</p>
-    <p class="card-text mb-auto">You are a staff member of the school.</p>
-    <strong class="card-text">Your child is currently in the MOE Kindergarten located within your preferred school.</strong>
-    <strong class="text-primary">Phase 2B</strong>
-    <p class="card-text mb-auto">You are a parent volunteer at the school, starting before 1 July 2018 and completing at least 40 hours of service by 30 June 2019.</p>
-    <p class="card-text mb-auto">You are a member endorsed by the church or clan directly connected to the school.</p>
-    <p class="card-text">You are endorsed as an active community leader.</p>
-    <strong class="text-primary">Phase 2C</strong>
-    <p class="card-text mb-auto">Singapore Citizen and PR</p>
-    <strong class="text-primary">Phase 2CS</strong>
-    <p class="card-text mb-auto">Singapore Citizen and PR</p>
-    <strong class="text-primary">Phase 3</strong>
-    <p class="card-text mb-auto">All Foreigners</p>
-</div>
+  <div class="col-md-4 themed-grid-col">
+      <h5 class="moduletitle">2010</h5>
+      <a *ngFor="let phase of phases" routerLink="/schools/2010/{{phase.id}}">
+        <div class="module">
+          <h6>{{phase.name}}</h6>
+        </div>
+      </a>
+  </div>
+
+  <div class="col-md-4 themed-grid-col">
+      <h5 class="moduletitle">2009</h5>
+      <a *ngFor="let phase of phases" routerLink="/schools/2010/{{phase.id}}">
+        <div class="module">
+          <h6>{{phase.name}}</h6>
+        </div>
+      </a>
+  </div>
+
+  <div class="col p-4 d-flex flex-column position-static">
+      <strong class="text-primary">Phase 1</strong>
+      <p class="card-text">You have another child currently studying at your preferred school.</p>
+      <strong class="text-primary">Phase 2A(1)</strong>
+      <p class="card-text mb-auto">You are a former student of your preferred school, and have signed up as a member of the alumni association before 1 July 2018.</p>
+      <p class="card-text">You are a member of the Advisory or Management Committee of your preferred school.</p>
+      <strong class="text-primary">Phase 2A(2)</strong>
+      <p class="card-text mb-auto">You or another child of yours have previously studied in your preferred school.</p>
+      <p class="card-text mb-auto">You are a staff member of the school.</p>
+      <strong class="card-text">Your child is currently in the MOE Kindergarten located within your preferred school.</strong>
+      <strong class="text-primary">Phase 2B</strong>
+      <p class="card-text mb-auto">You are a parent volunteer at the school, starting before 1 July 2018 and completing at least 40 hours of service by 30 June 2019.</p>
+      <p class="card-text mb-auto">You are a member endorsed by the church or clan directly connected to the school.</p>
+      <p class="card-text">You are endorsed as an active community leader.</p>
+      <strong class="text-primary">Phase 2C</strong>
+      <p class="card-text mb-auto">Singapore Citizen and PR</p>
+      <strong class="text-primary">Phase 2CS</strong>
+      <p class="card-text mb-auto">Singapore Citizen and PR</p>
+      <strong class="text-primary">Phase 3</strong>
+      <p class="card-text mb-auto">All Foreigners</p>
+  </div>
+
+</main>

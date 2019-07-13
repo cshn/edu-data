@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { School } from '../school';
 import { GEP_SCHOOLS } from './gep-schools';
-import { SchoolListService }  from '../school-list/school-list.service';
+import { SchoolListService }  from '../school-service/school-list.service';
 
 @Component({
   selector: 'app-school-search',
