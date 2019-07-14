@@ -8,15 +8,22 @@ import { School } from '../school';
 })
 
 export class SchoolListService {
-  private schoolsUrl = 'https://murmuring-cove-54677.herokuapp.com/schoollist';  // URL to web api
+  private schoolsUrl = 'https://murmuring-cove-54677.herokuapp.com';  // URL to web api
   constructor(private http: HttpClient) { }
 
-  getSchools(): Observable<School[]> {
-    return this.http.get<School[]>(this.schoolsUrl);
+  getSchoolBySchoolAndYear(year: number, phaseId: number, schoolname: String): Observable<School[]> {
+    const url = `${this.schoolsUrl}/byschool/${year}/${phaseId}/${schoolname}`;
+    return this.http.get<School[]>(url);
+  }
+
+  getSchoolBySchool(schoolname: String): Observable<School[]> {
+    const url = `${this.schoolsUrl}/byschool/${schoolname}`;
+    console.log(url);
+    return this.http.get<School[]>(url);
   }
 
   getSchoolsByPhase(year: number, phaseId: number): Observable<School[]> {
-    const url = `${this.schoolsUrl}/${year}/${phaseId}`;
+    const url = `${this.schoolsUrl}/schoollist/${year}/${phaseId}`;
     return this.http.get<School[]>(url);
   }
 

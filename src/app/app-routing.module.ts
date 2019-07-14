@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardSchoolComponent } from './dashboard-school/dashboard-school.component';
 import { CallbackComponent } from './callback/callback.component';
 import { ProfileComponent } from './profile/profile.component';
+import { SchoolSearchByschoolComponent } from './school-search-byschool/school-search-byschool.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboardschool', component: DashboardSchoolComponent },
   { path: 'schools/:year/:phaseid', component: SchoolSearchComponent },
+  { path: 'byschool/:name', component: SchoolSearchByschoolComponent },
   { path: 'callback', component: CallbackComponent},
   {
     path: 'profile',

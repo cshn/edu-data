@@ -14,6 +14,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CallbackComponent } from './callback/callback.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DashboardSchoolComponent } from './dashboard-school/dashboard-school.component';
+import { SchoolSearchByschoolComponent } from './school-search-byschool/school-search-byschool.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DashboardSchoolComponent } from './dashboard-school/dashboard-school.co
     DashboardComponent,
     CallbackComponent,
     ProfileComponent,
-    DashboardSchoolComponent
+    DashboardSchoolComponent,
+    SchoolSearchByschoolComponent
   ],
   imports: [
     BrowserModule,

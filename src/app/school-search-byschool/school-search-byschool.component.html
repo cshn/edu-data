@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <button class="gobackbutton" (click)="goBack()">go back</button>
+    <div class="table-responsive">
+      <table class="table table-striped table-sm">
+        <thead>
+          <tr>
+            <th>School</th>
+            <th>Year</th>
+            <th>Phase</th>
+            <th>Size</th>
+            <th>Availability</th>
+            <th>Registered</th>
+            <th>Hot %</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let school of schools">
+          <tr>
+            <td>{{school.school}}</td>
+            <td>{{school.year}}</td>
+            <td>{{school.phase}}</td>
+            <td>{{school.size}}</td>
+            <td>{{school.availability}}</td>
+            <td>{{school.registration}}</td>
+            <td>{{school.registration/school.availability | percent:'.1'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>  
+  </div>
+  

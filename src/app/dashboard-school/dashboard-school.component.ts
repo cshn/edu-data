@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { School } from '../school';
 import { SCHOOL_STATIC } from './school-static';
+import { SchoolListService }  from '../school-service/school-list.service';
 
 @Component({
   selector: 'app-dashboard-school',
@@ -18,5 +19,6 @@ export class DashboardSchoolComponent implements OnInit {
 
   ngOnInit() {
   }
+
 
 }

@@ -35,7 +35,7 @@
   </div>
 
   <div class="col-md-4 themed-grid-col">
-    <a *ngFor="let school of schools | filter : searcht" >
+    <a *ngFor="let school of schools | filter : searcht" routerLink="/byschool/{{school.school}}" >
       <div class="module">
         <h6>{{school.school}}</h6>
       </div>
