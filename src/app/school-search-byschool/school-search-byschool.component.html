@@ -1,4 +1,8 @@
 <div class="container-fluid">
+    <a *ngFor="let phase of phases">
+        <button class="gobackbutton" (click)="filterByPhase(phase.id)">{{phase.name}}</button>
+    </a>
+    
     <button class="gobackbutton" (click)="goBack()">go back</button>
     <div class="table-responsive">
       <table class="table table-striped table-sm">
@@ -13,7 +17,7 @@
             <th>Hot %</th>
           </tr>
         </thead>
-        <tbody *ngFor="let school of schools">
+        <tbody *ngFor="let school of schoolsByPhase">
           <tr>
             <td>{{school.school}}</td>
             <td>{{school.year}}</td>

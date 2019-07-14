@@ -14,6 +14,7 @@ import { PHASE_STATIC } from '../dashboard/phase-static';
 export class SchoolSearchByschoolComponent implements OnInit {
 
   schools: School[];
+  schoolsByPhase: School[];
   phases: Phase[] = PHASE_STATIC;
   searcht: string;
 
@@ -29,7 +30,10 @@ export class SchoolSearchByschoolComponent implements OnInit {
   getSchools(): void {
     const schoolname = this.route.snapshot.paramMap.get('name');
     this.schoolListService.getSchoolBySchool(schoolname)
-      .subscribe(schools => this.schools = schools);
+      .subscribe(schools => {
+        this.schools = schools
+        this.schoolsByPhase = schools;
+      });
   }
 
   getPhase(phaseid: number): String {
@@ -38,7 +42,14 @@ export class SchoolSearchByschoolComponent implements OnInit {
     });
     return found.name;
   }
+
   goBack(): void {
     this.location.back();
+  }
+
+  filterByPhase(phaseid: number): void {
+    this.schoolsByPhase = this.schools.filter(function(e){
+      return phaseid === e.phase;
+    });
   }
 }
