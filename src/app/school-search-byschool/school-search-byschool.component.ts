@@ -3,6 +3,8 @@ import { School } from '../school';
 import { SchoolListService }  from '../school-service/school-list.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { Phase } from '../dashboard/phase';
+import { PHASE_STATIC } from '../dashboard/phase-static';
 
 @Component({
   selector: 'app-school-search-byschool',
@@ -12,6 +14,7 @@ import { Location } from '@angular/common';
 export class SchoolSearchByschoolComponent implements OnInit {
 
   schools: School[];
+  phases: Phase[] = PHASE_STATIC;
   searcht: string;
 
   constructor(
@@ -29,6 +32,12 @@ export class SchoolSearchByschoolComponent implements OnInit {
       .subscribe(schools => this.schools = schools);
   }
 
+  getPhase(phaseid: number): String {
+    var found = this.phases.find(function(element) {
+      return element.id === phaseid;
+    });
+    return found.name;
+  }
   goBack(): void {
     this.location.back();
   }
