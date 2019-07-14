@@ -9,7 +9,7 @@ import { SchoolSearchByschoolComponent } from './school-search-byschool/school-s
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/dashboardschool', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'dashboardschool', component: DashboardSchoolComponent },
   { path: 'schools/:year/:phaseid', component: SchoolSearchComponent },
