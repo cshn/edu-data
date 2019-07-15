@@ -47,18 +47,8 @@
       <br>
   
       <mat-form-field>
-          <mat-label>Select School 1</mat-label>
-          <mat-select [(ngModel)]="selectedSchool1" name="phase">
-            <mat-option *ngFor="let school of schools" [value]="school.school">
-              {{school.school}}
-            </mat-option>
-          </mat-select>
-      </mat-form-field>
-      <br>
-
-      <mat-form-field>
-          <mat-label>Select School 2</mat-label>
-          <mat-select [(ngModel)]="selectedSchool2" name="phase">
+          <mat-label>Select School</mat-label>
+          <mat-select [(ngModel)]="selectedSchoolValue" name="phase">
             <mat-option *ngFor="let school of schools" [value]="school.school">
               {{school.school}}
             </mat-option>
@@ -66,7 +56,7 @@
       </mat-form-field>
       <br>
       
-      <button (click)="getTwoSchoolData()">Getting Excited</button>
+      <button (click)="getSchoolData()">Getting Excited</button>
     </div>
 
     <div *ngIf="barChartLabels.length">

@@ -14,16 +14,22 @@ export class DashboardAnalysisComponent implements OnInit {
   phases: Phase[] = PHASE_STATIC;
   schools: School[] = SCHOOL_STATIC;
   selectedPhase: number;
-  selectedSchool1: String;
-  selectedSchool2: String;
+  selectedSchoolValue: String;
   school1Data: School[];
 
   public barChartOptions = {
     scaleShowVerticalLines: false,
-    responsive: true
+    responsive: true,
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
   };
   public barChartLabels = [];
-  public barChartType = 'bar';
+  public barChartType = 'line';
   public barChartLegend = true;
   public barChartData = [];
 
@@ -32,9 +38,10 @@ export class DashboardAnalysisComponent implements OnInit {
   ngOnInit() {
   }
 
-  getTwoSchoolData(): void {
+  getSchoolData(): void {
     this.barChartData = [];
-    this.schoolListService.getSchoolByPhase(this.selectedPhase, this.selectedSchool1)
+    this.barChartLabels = [];
+    this.schoolListService.getSchoolByPhase(this.selectedPhase, this.selectedSchoolValue)
       .subscribe(schools => {
         this.school1Data = schools.sort((n1: School, n2: School) => {
           if(n1.year > n2.year) {
@@ -43,28 +50,17 @@ export class DashboardAnalysisComponent implements OnInit {
             return -1;
           }
         });
-        var oneSchoolData = [];
+        var regSchoolData = [];
+        var avaSchoolData = [];
         for(var i = 0; i < schools.length; i=i+1) {
           this.barChartLabels.push(schools[i].year);
-          oneSchoolData.push(schools[i].registration/schools[i].availability);
+          regSchoolData.push(schools[i].registration);
+          avaSchoolData.push(schools[i].availability);
         }
-        this.barChartData.push({data: oneSchoolData, label: this.selectedSchool1.toString()});
-      });
-
-    this.schoolListService.getSchoolByPhase(this.selectedPhase, this.selectedSchool2)
-      .subscribe(schools => {
-        this.school1Data = schools.sort((n1: School, n2: School) => {
-          if(n1.year > n2.year) {
-            return 1;
-          } else {
-            return -1;
-          }
-        });
-        var oneSchoolData = [];
-        for(var i = 0; i < schools.length; i=i+1) {
-          oneSchoolData.push(schools[i].registration/schools[i].availability);
-        }
-        this.barChartData.push({data: oneSchoolData, label: this.selectedSchool2.toString()});
+       // console.log(regSchoolData);
+       // console.log(avaSchoolData);
+        this.barChartData.push({data: regSchoolData, label: "registration"});
+        this.barChartData.push({data: avaSchoolData, label: "availability"});
       });
   }
 
