@@ -33,6 +33,7 @@ export class DashboardAnalysisComponent implements OnInit {
   }
 
   getTwoSchoolData(): void {
+    this.barChartData = [];
     this.schoolListService.getSchoolByPhase(this.selectedPhase, this.selectedSchool1)
       .subscribe(schools => {
         this.school1Data = schools.sort((n1: School, n2: School) => {
