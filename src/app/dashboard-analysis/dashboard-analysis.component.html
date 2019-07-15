@@ -1,0 +1,87 @@
+
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/dashboard">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+            By Year <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboardschool">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+            By School
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboardanalysis">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
+            School Analysis
+          </a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+      <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
+        </div>
+      </div>
+      <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+      </div>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <mat-label>Select School Phase</mat-label>
+        <mat-select [(ngModel)]="selectedPhase" name="phase">
+          <mat-option *ngFor="let phase of phases" [value]="phase.id">
+            {{phase.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+  
+      <mat-form-field>
+          <mat-label>Select School 1</mat-label>
+          <mat-select [(ngModel)]="selectedSchool1" name="phase">
+            <mat-option *ngFor="let school of schools" [value]="school.school">
+              {{school.school}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+          <mat-label>Select School 2</mat-label>
+          <mat-select [(ngModel)]="selectedSchool2" name="phase">
+            <mat-option *ngFor="let school of schools" [value]="school.school">
+              {{school.school}}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+      <br>
+      
+      <button (click)="getTwoSchoolData()">Getting Excited</button>
+    </div>
+
+    <div *ngIf="barChartLabels.length">
+        <div style="display: block">
+          <canvas baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType">
+          </canvas>
+        </div>
+    </div>
+
+        
+</main>
+  
+

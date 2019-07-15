@@ -18,12 +18,22 @@ export class SchoolListService {
 
   getSchoolBySchool(schoolname: String): Observable<School[]> {
     const url = `${this.schoolsUrl}/byschool/${schoolname}`;
-    console.log(url);
+  //  console.log(url);
     return this.http.get<School[]>(url);
   }
 
-  getSchoolsByPhase(year: number, phaseId: number): Observable<School[]> {
+  getSchoolsByYearByPhase(year: number, phaseId: number): Observable<School[]> {
     const url = `${this.schoolsUrl}/schoollist/${year}/${phaseId}`;
+    return this.http.get<School[]>(url);
+  }
+
+  getTwoSchoolByPhase( phaseId: number, school1: String, school2: String): Observable<School[]> {
+    const url = `${this.schoolsUrl}/schoolanalysis/${phaseId}/${school1}/${school2}`;
+    return this.http.get<School[]>(url);
+  }
+
+  getSchoolByPhase( phaseId: number, school: String): Observable<School[]> {
+    const url = `${this.schoolsUrl}/schoolanalysis/${phaseId}/${school}`;
     return this.http.get<School[]>(url);
   }
 
