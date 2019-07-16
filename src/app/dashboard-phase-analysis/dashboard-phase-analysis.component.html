@@ -50,7 +50,7 @@
     <div>
       <mat-form-field>
         <mat-label>Select Year</mat-label>
-        <mat-select [(ngModel)]="selectedYear" name="phase">
+        <mat-select [(ngModel)]="selectedYear" name="year">
           <mat-option *ngFor="let year of years" [value]="year">
             {{year}}
           </mat-option>
@@ -59,15 +59,15 @@
       <br>
   
       <mat-form-field>
-          <mat-label>Select School</mat-label>
-          <mat-select [(ngModel)]="selectedSchoolValue" name="phase">
-            <mat-option *ngFor="let school of schools" [value]="school.school">
-              {{school.school}}
+          <mat-label>Select Phase</mat-label>
+          <mat-select [(ngModel)]="selectedPhase" name="phase">
+            <mat-option *ngFor="let phase of phases" [value]="phase.id">
+              {{phase.name}}
             </mat-option>
           </mat-select>
       </mat-form-field>
       <br>
-      <button (click)="getSchoolData()">Pie Chart</button>
+      <button (click)="getSchoolData()">All School Chart</button>
     </div>
 
     <div *ngIf="barChartLabels.length">

@@ -13,8 +13,9 @@ import { SchoolListService }  from '../school-service/school-list.service';
 export class DashboardPhaseAnalysisComponent implements OnInit {
   years: number[] = [2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019];
   schools: School[] = SCHOOL_STATIC;
+  phases: Phase[] = PHASE_STATIC;
   selectedYear: number;
-  selectedSchoolValue: String;
+  selectedPhase: number;
   schoolData: School[];
 
   ngOnInit() {
@@ -32,30 +33,33 @@ export class DashboardPhaseAnalysisComponent implements OnInit {
     }
   };
   public barChartLabels = [];
-  public barChartType = 'pie';
+  public barChartType = 'bar';
   public barChartLegend = true;
   public barChartData = [];
 
-  constructor(private schoolListService: SchoolListService) { }
+  constructor(private schoolListService: SchoolListService) { 
+    this.years.sort((n1: number, n2: number) => {
+      if(n1 < n2) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+  }
 
   getSchoolData(): void {
     this.barChartData = [];
     this.barChartLabels = [];
-    this.schoolListService.getSchoolByYear(this.selectedYear, this.selectedSchoolValue)
+    this.schoolListService.getSchoolsByYearByPhase(this.selectedYear, this.selectedPhase)
       .subscribe(schools => {
-        this.schoolData = schools.sort((n1: School, n2: School) => {
-          if(n1.phase > n2.phase) {
-            return 1;
-          } else {
-            return -1;
-          }
-        });
-        var regSchoolData = [];
+        this.schoolData = schools;
+        
+        var subSchoolData = [];
         for(var i = 0; i < schools.length; i=i+1) {
-          this.barChartLabels.push(schools[i].phase);
-          regSchoolData.push(schools[i].registration);
+          this.barChartLabels.push(schools[i].school);
+          subSchoolData.push(Math.round(schools[i].registration/schools[i].availability*100)/100);
         }
-        this.barChartData.push({data: regSchoolData, label: "registration"});
+        this.barChartData.push({data: subSchoolData, label: "Subsription Rate"});
       });
   }
 }
