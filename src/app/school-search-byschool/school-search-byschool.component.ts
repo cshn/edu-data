@@ -31,7 +31,14 @@ export class SchoolSearchByschoolComponent implements OnInit {
     const schoolname = this.route.snapshot.paramMap.get('name');
     this.schoolListService.getSchoolBySchool(schoolname)
       .subscribe(schools => {
-        this.schools = schools
+        this.schools = schools.sort((n1: School, n2: School) => {
+          if(n1.year > n2.year) {
+            return 1;
+          } else {
+            return -1;
+          }
+        });
+
         this.schoolsByPhase = schools;
       });
   }
