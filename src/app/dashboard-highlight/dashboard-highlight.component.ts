@@ -16,6 +16,23 @@ export class DashboardHighlightComponent implements OnInit {
     this.getSchoolData();
   }
 
+
+  public barChartOptions = {
+    scaleShowVerticalLines: false,
+    responsive: true,
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  };
+  public barChartLabels = [];
+  public barChartType = 'bar';
+  public barChartLegend = true;
+  public barChartData = [];
+
   getSchoolData(): void {
     this.schoolListService.getSchoolsByYearByPhase(2019, 3)
       .subscribe(schools => {
@@ -28,6 +45,13 @@ export class DashboardHighlightComponent implements OnInit {
             return -1;
           }
         });
+
+        var subSchoolData = [];
+        for(var i = 0; i < schools.length; i=i+1) {
+          this.barChartLabels.push(schools[i].school);
+          subSchoolData.push(Math.round(schools[i].registration/schools[i].availability*100)/100);
+        }
+        this.barChartData.push({data: subSchoolData, label: "Subsription Rate"});
       });
   }
 }
