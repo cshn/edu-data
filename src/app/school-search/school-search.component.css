@@ -5,7 +5,9 @@
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-
+label {
+  margin-right: 10px;
+}
   /* HeroDetailComponent's private CSS styles */
 input {
     display: inline-block;
@@ -24,7 +26,7 @@ button {
     cursor: pointer;
     cursor: hand;
     margin-right: 1px;
-    margin-left: 1px;
+    margin-left: 10px;
   }
 .gobackbutton {
     font-family: Arial;
@@ -35,7 +37,7 @@ button {
     cursor: pointer;
     cursor: hand;
     margin-right: 1px;
-    margin-left: 1px;
+    margin-left: 10px;
 }
 button:hover {
     background-color: #cfd8dc;

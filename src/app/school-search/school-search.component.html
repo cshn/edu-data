@@ -1,15 +1,17 @@
 <div class="container-fluid">
-  <input class="form-control" type="text" placeholder="Search School..." [(ngModel)]="searchtext"> 
+  <label><strong>{{tag}}</strong></label>
+  <input class="form-control" type="text" placeholder="Search School..." [(ngModel)]="searchtext">
+  
   <button class="gobackbutton" (click)="goBack()">go back</button>
   <div class="table-responsive">
     <table class="table table-striped table-sm">
       <thead>
         <tr>
-          <th>{{schoolTag}}</th>
-          <th>Size</th>
-          <th>Availability</th>
-          <th>Registered</th>
-          <th>Hot %</th>
+          <th>School</th>
+          <th (click)="sortBySize()">Size</th>
+          <th (click)="sortByAvailability()">Availability</th>
+          <th (click)="sortByRegister()">Registered</th>
+          <th (click)="sortBySubscribe()">Hot %</th>
         </tr>
       </thead>
       <tbody *ngFor="let school of schools | filter : searchtext">
