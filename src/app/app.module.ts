@@ -22,6 +22,7 @@ import {MatCheckboxModule} from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { ChartsModule } from 'ng2-charts';
+import { DashboardHighlightComponent } from './dashboard-highlight/dashboard-highlight.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ChartsModule } from 'ng2-charts';
     DashboardSchoolComponent,
     SchoolSearchByschoolComponent,
     SchoolAnalysisComponent,
-    DashboardAnalysisComponent
+    DashboardAnalysisComponent,
+    DashboardHighlightComponent
   ],
   imports: [
     BrowserModule,

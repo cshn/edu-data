@@ -32,7 +32,7 @@ export class SchoolSearchByschoolComponent implements OnInit {
     this.schoolListService.getSchoolBySchool(schoolname)
       .subscribe(schools => {
         this.schools = schools.sort((n1: School, n2: School) => {
-          if(n1.year > n2.year) {
+          if(n1.year < n2.year) {
             return 1;
           } else {
             return -1;

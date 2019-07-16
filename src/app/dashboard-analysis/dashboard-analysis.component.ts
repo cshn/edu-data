@@ -15,7 +15,7 @@ export class DashboardAnalysisComponent implements OnInit {
   schools: School[] = SCHOOL_STATIC;
   selectedPhase: number;
   selectedSchoolValue: String;
-  school1Data: School[];
+  schoolData: School[];
 
   public barChartOptions = {
     scaleShowVerticalLines: false,
@@ -43,7 +43,7 @@ export class DashboardAnalysisComponent implements OnInit {
     this.barChartLabels = [];
     this.schoolListService.getSchoolByPhase(this.selectedPhase, this.selectedSchoolValue)
       .subscribe(schools => {
-        this.school1Data = schools.sort((n1: School, n2: School) => {
+        this.schoolData = schools.sort((n1: School, n2: School) => {
           if(n1.year > n2.year) {
             return 1;
           } else {
@@ -57,8 +57,6 @@ export class DashboardAnalysisComponent implements OnInit {
           regSchoolData.push(schools[i].registration);
           avaSchoolData.push(schools[i].availability);
         }
-       // console.log(regSchoolData);
-       // console.log(avaSchoolData);
         this.barChartData.push({data: regSchoolData, label: "registration"});
         this.barChartData.push({data: avaSchoolData, label: "availability"});
       });
