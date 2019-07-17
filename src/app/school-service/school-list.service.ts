@@ -11,6 +11,11 @@ export class SchoolListService {
   private schoolsUrl = 'https://murmuring-cove-54677.herokuapp.com';  // URL to web api
   constructor(private http: HttpClient) { }
 
+  getAllSchool(): Observable<School[]> {
+    const url = `${this.schoolsUrl}/allschool`;
+    return this.http.get<School[]>(url);
+  }
+
   getSchoolBySchoolAndYear(year: number, phaseId: number, schoolname: String): Observable<School[]> {
     const url = `${this.schoolsUrl}/byschool/${year}/${phaseId}/${schoolname}`;
     return this.http.get<School[]>(url);
@@ -18,7 +23,6 @@ export class SchoolListService {
 
   getSchoolBySchool(schoolname: String): Observable<School[]> {
     const url = `${this.schoolsUrl}/byschool/${schoolname}`;
-  //  console.log(url);
     return this.http.get<School[]>(url);
   }
 

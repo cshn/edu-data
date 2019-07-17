@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SchoolListService }  from '../school-service/school-list.service';
+import { School } from '../school';
 
 @Component({
   selector: 'app-dashboard-grid',
@@ -6,21 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard-grid.component.css']
 })
 export class DashboardGridComponent implements OnInit {
-
-  constructor() { }
+  schools: School[];
+  constructor(private schoolListService: SchoolListService) { }
 
   ngOnInit() {
+    this.getAllSchool();
   }
 
   columnDefs = [
-    {headerName: 'Make', field: 'make' },
-    {headerName: 'Model', field: 'model' },
-    {headerName: 'Price', field: 'price'}
+    {headerName: 'School', field: 'school', filter: true},
+    {headerName: 'Year', field: 'year', filter: true },
+    {headerName: 'Phase', field: 'phase', filter: true},
+    {headerName: 'Availability', field: 'availability', filter: true},
+    {headerName: 'Registration', field: 'registration', filter: true}
   ];
 
-  rowData = [
-      { make: 'Toyota', model: 'Celica', price: 35000 },
-      { make: 'Ford', model: 'Mondeo', price: 32000 },
-      { make: 'Porsche', model: 'Boxter', price: 72000 }
-  ];
+  rowData = [{school: 'Nan Hua', year: 2019, phase: 1, availability: 100, registration: 200}];
+
+  getAllSchool(): void {
+    //this.rowData.push({school: 'Nanyang', year: 2019, phase: 1, availability: 100, registered: 200});
+    this.schoolListService.getAllSchool().subscribe(schools => {
+      console.log(schools.length);
+      this.rowData = schools;
+    })
+  }
 }
