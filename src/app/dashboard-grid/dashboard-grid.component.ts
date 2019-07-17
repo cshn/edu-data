@@ -16,11 +16,11 @@ export class DashboardGridComponent implements OnInit {
   }
 
   columnDefs = [
-    {headerName: 'School', field: 'school', filter: true},
-    {headerName: 'Year', field: 'year', filter: true },
-    {headerName: 'Phase', field: 'phase', filter: true},
-    {headerName: 'Availability', field: 'availability', filter: true},
-    {headerName: 'Registration', field: 'registration', filter: true}
+    {headerName: 'School', field: 'school', sortable: true, filter: true},
+    {headerName: 'Year', field: 'year', sortable: true, filter: true },
+    {headerName: 'Phase', field: 'phase', sortable: true, filter: true},
+    {headerName: 'Availability', field: 'availability', sortable: true, filter: true},
+    {headerName: 'Registration', field: 'registration', sortable: true, filter: true}
   ];
 
   rowData = [{school: 'Nan Hua', year: 2019, phase: 1, availability: 100, registration: 200}];
