@@ -2,6 +2,7 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SchoolSearchComponent } from './school-search/school-search.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardGridComponent } from './dashboard-grid/dashboard-grid.component';
 import { DashboardSchoolComponent } from './dashboard-school/dashboard-school.component';
 import { DashboardAnalysisComponent } from './dashboard-analysis/dashboard-analysis.component';
 import { DashboardPhaseAnalysisComponent } from './dashboard-phase-analysis/dashboard-phase-analysis.component';
@@ -15,6 +16,7 @@ import { AuthGuard } from './auth.guard';
 const routes: Routes = [
   { path: '', redirectTo: '/dashboardschool', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboardgrid', component: DashboardGridComponent },
   { path: 'dashboardschool', component: DashboardSchoolComponent },
   { path: 'dashboardanalysis', component: DashboardAnalysisComponent },
   { path: 'dashboardphaseanalysis', component: DashboardPhaseAnalysisComponent },

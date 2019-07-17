@@ -32,10 +32,7 @@ export class SchoolSearchComponent implements OnInit {
     this.phases = PHASE_STATIC;
     const id = +this.route.snapshot.paramMap.get('phaseid');
     const year = +this.route.snapshot.paramMap.get('year');
-    this.phases.filter(function(p){
-      return (p.id === id);
-    })
-    this.tag = "Year " + year + ", " + this.phases[0].name + " ";
+    this.tag = "Year " + year + ", " + this.phases[id-1].name + " ";
     this.schoolListService.getSchoolsByYearByPhase(year,id)
       .subscribe(schools => this.schools = schools);
   }

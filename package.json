@@ -24,6 +24,8 @@
     "@angular/router": "~8.0.1",
     "@auth0/auth0-spa-js": "^1.0.2",
     "@ng-bootstrap/ng-bootstrap": "^4.2.1",
+    "ag-grid-angular": "^21.0.1",
+    "ag-grid-community": "^21.0.1",
     "angular2-jwt": "^0.2.3",
     "auth0-js": "^9.10.4",
     "auth0-lock": "^11.16.3",
