@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SchoolListService }  from '../school-service/school-list.service';
-import { School } from '../school';
 
 @Component({
   selector: 'app-dashboard-grid',
@@ -8,7 +7,9 @@ import { School } from '../school';
   styleUrls: ['./dashboard-grid.component.css']
 })
 export class DashboardGridComponent implements OnInit {
-  schools: School[];
+  private gridApi;
+  private gridColumnApi;
+ 
   constructor(private schoolListService: SchoolListService) { }
 
   ngOnInit() {
@@ -23,13 +24,24 @@ export class DashboardGridComponent implements OnInit {
     {headerName: 'Registration', field: 'registration', sortable: true, filter: true}
   ];
 
-  rowData = [{school: 'Nan Hua', year: 2019, phase: 1, availability: 100, registration: 200}];
+  rowData = [];
 
   getAllSchool(): void {
-    //this.rowData.push({school: 'Nanyang', year: 2019, phase: 1, availability: 100, registered: 200});
     this.schoolListService.getAllSchool().subscribe(schools => {
-      console.log(schools.length);
       this.rowData = schools;
     })
+  }
+
+  autoSizeAll() {
+    var allColumnIds = [];
+    this.gridColumnApi.getAllColumns().forEach(function(column) {
+      allColumnIds.push(column.colId);
+    });
+    this.gridColumnApi.autoSizeColumns(allColumnIds);
+  }
+
+  onGridReady(params) {
+    this.gridApi = params.api;
+    this.gridColumnApi = params.columnApi;
   }
 }

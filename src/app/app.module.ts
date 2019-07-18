@@ -27,6 +27,7 @@ import { DashboardPhaseAnalysisComponent } from './dashboard-phase-analysis/dash
 import { AgGridModule } from 'ag-grid-angular';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { DashboardGridComponent } from './dashboard-grid/dashboard-grid.component';
+import { DashboardBallotComponent } from './dashboard-ballot/dashboard-ballot.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { DashboardGridComponent } from './dashboard-grid/dashboard-grid.componen
     DashboardHighlightComponent,
     DashboardPhaseAnalysisComponent,
     SideBarComponent,
-    DashboardGridComponent
+    DashboardGridComponent,
+    DashboardBallotComponent
   ],
   imports: [
     BrowserModule,

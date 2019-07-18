@@ -1,5 +1,5 @@
 /* DashboardComponent's private CSS styles */
-  [class*='col-'] {
+[class*='col-'] {
     float: left;
     padding-right: 20px;
     padding-bottom: 20px;
@@ -48,18 +48,33 @@
   .grid-pad > [class*='col-']:last-of-type {
     padding-right: 20px;
   }
-
-  .outer-div {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+  @media (max-width: 600px) {
+    .module {
+      font-size: 10px;
+      max-height: 75px; }
   }
-
+  @media (max-width: 1024px) {
+    .grid {
+      margin: 0;
+    }
+    .module {
+      min-width: 60px;
+    }
+  }
   .button-bar {
-      padding-bottom: 4px;
+    padding-bottom: 4px;
   }
 
-  .grid-wrapper {
-    height: 20px;
-    flex: 1;
+  input {
+    display: inline-block;
+    width: 20em;
+    margin: .5em 0;
+    color: #607D8B;
+    font-weight: bold;
+    padding: 5px 10px;
   }
+  /*
+  Copyright Google LLC. All Rights Reserved.
+  Use of this source code is governed by an MIT-style license that
+  can be found in the LICENSE file at http://angular.io/license
+  */

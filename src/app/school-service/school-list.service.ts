@@ -11,6 +11,11 @@ export class SchoolListService {
   private schoolsUrl = 'https://murmuring-cove-54677.herokuapp.com';  // URL to web api
   constructor(private http: HttpClient) { }
 
+  getAllSchoolBallot(): Observable<School[]> {
+    const url = `${this.schoolsUrl}/allschoolballot`;
+    return this.http.get<School[]>(url);
+  }
+  
   getAllSchool(): Observable<School[]> {
     const url = `${this.schoolsUrl}/allschool`;
     return this.http.get<School[]>(url);
