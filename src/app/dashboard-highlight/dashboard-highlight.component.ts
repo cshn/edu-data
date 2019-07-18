@@ -34,7 +34,7 @@ export class DashboardHighlightComponent implements OnInit {
   public barChartData = [];
 
   getSchoolData(): void {
-    this.schoolListService.getSchoolsByYearByPhase(2019, 3)
+    this.schoolListService.getSchoolsByYearByPhase(2019, 4)
       .subscribe(schools => {
         this.schools = schools.filter(function(e){
           return (e.availability > 0 && e.availability < e.registration);

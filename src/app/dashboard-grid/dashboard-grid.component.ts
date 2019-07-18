@@ -17,7 +17,7 @@ export class DashboardGridComponent implements OnInit {
   }
 
   columnDefs = [
-    {headerName: 'School', field: 'school', sortable: true, filter: true},
+    {headerName: 'School', field: 'school', resizable: true,sortable: true, filter: true},
     {headerName: 'Year', field: 'year', sortable: true, filter: true },
     {headerName: 'Phase', field: 'phase', sortable: true, filter: true},
     {headerName: 'Availability', field: 'availability', sortable: true, filter: true},
@@ -43,5 +43,6 @@ export class DashboardGridComponent implements OnInit {
   onGridReady(params) {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
+    this.autoSizeAll();
   }
 }
