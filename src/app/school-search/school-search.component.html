@@ -1,28 +1,17 @@
-<div class="container-fluid">
-  <label><strong>{{tag}}</strong></label>
-  <input class="form-control" type="text" placeholder="Search School..." [(ngModel)]="searchtext">
-  
-  <button class="gobackbutton" (click)="goBack()">go back</button>
-  <div class="table-responsive">
-    <table class="table table-striped table-sm">
-      <thead>
-        <tr>
-          <th>School</th>
-          <th (click)="sortBySize()">Size</th>
-          <th (click)="sortByAvailability()">Availability</th>
-          <th (click)="sortByRegister()">Registered</th>
-          <th (click)="sortBySubscribe()">Hot %</th>
-        </tr>
-      </thead>
-      <tbody *ngFor="let school of schools | filter : searchtext">
-        <tr>
-          <td>{{school.school}}</td>
-          <td>{{school.size}}</td>
-          <td>{{school.availability}}</td>
-          <td>{{school.registration}}</td>
-          <td>{{school.registration/school.availability | percent:'.1'}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>  
-</div>
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+  <div class="sidebar-sticky">
+      <app-side-bar></app-side-bar>
+  </div>
+</nav>
+
+<main class="col-md-9 ml-sm-auto col-lg-10 px-4">
+  <div class="outer-div">
+        <ag-grid-angular 
+          style="width: 100%; height: 600px;" 
+          class="ag-theme-balham"
+          [rowData]="rowData" 
+          [columnDefs]="columnDefs"
+          (firstDataRendered)="onGridReady($event)">
+        </ag-grid-angular>
+  </div>
+</main>

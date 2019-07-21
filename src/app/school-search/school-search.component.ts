@@ -17,6 +17,8 @@ export class SchoolSearchComponent implements OnInit {
   searchtext: string;
   tag: string;
   phases: Phase[] = PHASE_STATIC;
+  private gridApi;
+  private gridColumnApi;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,42 +30,58 @@ export class SchoolSearchComponent implements OnInit {
     this.getSchools();
   }
 
+  columnDefs = [
+    {headerName: 'School', field: 'school', resizable: true,sortable: true, filter: true},
+    {headerName: 'Year', field: 'year', resizable: true,sortable: true, filter: true },
+    {headerName: 'Phase', field: 'phase', resizable: true,sortable: true, filter: true},
+    {headerName: 'Availability', field: 'availability', resizable: true,sortable: true, filter: true},
+    {headerName: 'Registration', field: 'registration', resizable: true,sortable: true, filter: true},
+    {headerName: 'Subscription Rate', field: 'subrate', resizable: true,sortable: true, filter: true}
+  ];
+
+  rowData = [];
+
   getSchools(): void {
     this.phases = PHASE_STATIC;
     const id = +this.route.snapshot.paramMap.get('phaseid');
     const year = +this.route.snapshot.paramMap.get('year');
     this.tag = "Year " + year + ", " + this.phases[id-1].name + " ";
     this.schoolListService.getSchoolsByYearByPhase(year,id)
-      .subscribe(schools => this.schools = schools);
+      .subscribe(schools => {
+        this.rowData = schools.sort((n1: School, n2: School) => {
+          if(n1.year < n2.year) {
+            return 1;
+          } else {
+            return -1;
+          }
+        });
+        this.rowData.forEach( e => {
+          e.phase = this.phases[e.phase-1].name;
+          if (e.availability) {
+            e.subrate = Math.round(e.registration/e.availability*1000)/1000;
+          } else {
+            e.subrate = 0;
+          }
+        })
+      });
   }
 
   goBack(): void {
     this.location.back();
   }
 
-  sortBySize(): void {
-    this.schools.sort((n1: School, n2: School) => {
-       return n1.size < n2.size ? 1 : -1;
-    })
+  autoSizeAll() {
+    var allColumnIds = [];
+    this.gridColumnApi.getAllColumns().forEach(function(column) {
+      allColumnIds.push(column.colId);
+    });
+    this.gridColumnApi.autoSizeColumns(allColumnIds);
   }
-  sortByAvailability(): void {
-    this.schools.sort((n1: School, n2: School) => {
-       return n1.availability < n2.availability ? 1 : -1;
-    })
-  }
-  sortByRegister(): void {
-    this.schools.sort((n1: School, n2: School) => {
-       return n1.registration < n2.registration ? 1 : -1;
-    })
-  }
-  sortBySubscribe(): void {
-    this.schools.sort((n1: School, n2: School) => {
-      if (n1.availability > 0 && n2.availability > 0) {
-        return n1.registration/n1.availability < n2.registration/n2.availability ? 1 : -1;
-      } else {
-        return 1;
-      }
-    })
+
+  onGridReady(params) {
+    this.gridApi = params.api;
+    this.gridColumnApi = params.columnApi;
+    this.autoSizeAll();
   }
   
 }
