@@ -1,5 +1,5 @@
 /* DashboardComponent's private CSS styles */
-[class*='col-'] {
+  [class*='col-'] {
     float: left;
     padding-right: 20px;
     padding-bottom: 20px;
@@ -10,56 +10,26 @@
   a {
     text-decoration: none;
   }
-  *, *:after, *:before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-  h3 {
+  h6 {
+    padding: 8px 0;
     text-align: center;
-    margin-bottom: 0;
-  }
-  h4 {
-    position: relative;
-  }
-  .moduletitle {
-    padding: 10px;
-    text-align: center;
-    max-height: 120px;
-    min-width: 60px;
-    border-radius: 2px;
+    font-size: 1.6em;
+    font: tahoma;
   }
   .module {
-    padding: 10px;
-    text-align: center;
-    color: #eee;
-    max-height: 120px;
-    min-width: 60px;
-    background-color: #3f525c;
+    color: #010405;
+    font-size: 0.5em;
+    width: 88%;
+    border-bottom: solid; 
+    border-bottom-width: thin;
+    border-bottom-color: #d7dee0;
   }
   .module:hover {
-    background-color: #eee;
+    background-color: #8cb8cf;
     cursor: pointer;
-    color: #607d8b;
-  }
-  .grid-pad {
-    padding: 10px 0;
-  }
-  .grid-pad > [class*='col-']:last-of-type {
-    padding-right: 20px;
-  }
-  @media (max-width: 600px) {
-    .module {
-      font-size: 10px;
-      max-height: 75px; }
-  }
-  @media (max-width: 1024px) {
-    .grid {
-      margin: 0;
-    }
-    .module {
-      min-width: 60px;
-    }
+    color: #010405;
+    width: 88%;
+    background-color:rgb(250, 248, 248);
   }
   
   input {
@@ -69,9 +39,10 @@
     color: #607D8B;
     font-weight: bold;
     padding: 5px 10px;
+    font: tahoma;
   }
-  /*
-  Copyright Google LLC. All Rights Reserved.
-  Use of this source code is governed by an MIT-style license that
-  can be found in the LICENSE file at http://angular.io/license
-  */
+  ::placeholder {
+    font-size: 13px;
+    font: tahoma;
+  }
+  
