@@ -58,7 +58,7 @@ export class SchoolSearchComponent implements OnInit {
         });
         this.rowData.forEach( e => {
           e.phase = this.phases[e.phase-1].name;
-          if (e.availability) {
+          if (e.availability > 0) {
             e.subrate = Math.round(e.registration/e.availability*1000)/1000;
           } else {
             e.subrate = 0;
