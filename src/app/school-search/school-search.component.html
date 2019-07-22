@@ -5,6 +5,9 @@
 </nav>
 
 <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
+  <div class="button-bar">
+    <div *ngIf="showbutton"><button (click)="topSchool()">Show Me Top 10 Difficult to Enter School</button></div>
+  </div>
   <div class="outer-div">
         <ag-grid-angular 
           style="width: 100%; height: 600px;" 
@@ -13,5 +16,16 @@
           [columnDefs]="columnDefs"
           (firstDataRendered)="onGridReady($event)">
         </ag-grid-angular>
+  </div>
+  <div *ngIf="barChartLabels.length">
+      <div style="display: block">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+      </canvas>
+      </div>
   </div>
 </main>

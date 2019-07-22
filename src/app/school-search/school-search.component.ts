@@ -19,6 +19,7 @@ export class SchoolSearchComponent implements OnInit {
   phases: Phase[] = PHASE_STATIC;
   private gridApi;
   private gridColumnApi;
+  showbutton = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -70,6 +71,49 @@ export class SchoolSearchComponent implements OnInit {
     this.location.back();
   }
 
+  public barChartOptions = {
+    scaleShowVerticalLines: false,
+    responsive: true,
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true,
+          callback: function (value) {
+            return (value * 100).toFixed(0) + '%'; // convert it to percentage
+          }
+        }
+      }]
+    }
+  };
+  public barChartLabels = [];
+  public barChartType = 'bar';
+  public barChartLegend = true;
+  public barChartData = [];
+
+  topSchool(): void {
+    this.barChartData = [];
+    this.barChartLabels = [];
+    this.rowData.forEach(e => {
+      if(e.subrate > 0) {
+        this.barChartLabels.push(e.school);
+      }
+    })
+    this.rowData.sort(function(first, second) {
+      return second.subrate - first.subrate;
+    });
+    
+    //Result
+    var chartData = [];
+    this.barChartLabels = [];
+    this.rowData.slice(0,10).forEach(e => {
+      this.barChartLabels.push(e.school);
+      chartData.push(e.subrate);
+    })
+
+    this.barChartData.push({data: chartData, label: "Top 10 Difficult to Enter School"});
+    
+  }
+
   autoSizeAll() {
     var allColumnIds = [];
     this.gridColumnApi.getAllColumns().forEach(function(column) {
@@ -82,6 +126,7 @@ export class SchoolSearchComponent implements OnInit {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
     this.autoSizeAll();
+    this.showbutton = 1;
   }
   
 }

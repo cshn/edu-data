@@ -20,9 +20,9 @@ export class SchoolSearchByschoolComponent implements OnInit {
     private route: ActivatedRoute,
     private schoolListService: SchoolListService,
     private location: Location) { }
-    
-    private gridApi;
-    private gridColumnApi;
+
+  private gridApi;
+  private gridColumnApi;
 
   ngOnInit() {
     this.getSchools();
