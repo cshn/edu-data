@@ -10,6 +10,7 @@ import { DashboardPhaseAnalysisComponent } from './dashboard-phase-analysis/dash
 import { DashboardHighlightComponent } from './dashboard-highlight/dashboard-highlight.component';
 import { CallbackComponent } from './callback/callback.component';
 import { ProfileComponent } from './profile/profile.component';
+import { DonationComponent } from './donation/donation.component';
 import { SchoolSearchByschoolComponent } from './school-search-byschool/school-search-byschool.component';
 import { SchoolAnalysisComponent } from './school-analysis/school-analysis.component';
 import { AuthGuard } from './auth.guard';
@@ -17,6 +18,7 @@ import { AuthGuard } from './auth.guard';
 const routes: Routes = [
   { path: '', redirectTo: '/dashboardschool', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'donation', component: DonationComponent },
   { path: 'dashboardgrid', component: DashboardGridComponent },
   { path: 'dashboardschool', component: DashboardSchoolComponent },
   { path: 'dashboardballot', component: DashboardBallotComponent },

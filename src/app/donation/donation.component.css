@@ -1,0 +1,48 @@
+/* DashboardComponent's private CSS styles */
+[class*='col-'] {
+    float: left;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+  [class*='col-']:last-of-type {
+    padding-right: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  h6 {
+    padding: 8px 0;
+    text-align: center;
+    font-size: 2em;
+    font: tahoma;
+  }
+  .module {
+    color: #010405;
+    font-size: 0.5em;
+    width: 88%;
+    border-bottom: solid; 
+    border-bottom-width: thin;
+    border-bottom-color: #d7dee0;
+  }
+  .module:hover {
+    background-color: #8cb8cf;
+    cursor: pointer;
+    color: #010405;
+    width: 88%;
+    background-color:rgb(250, 248, 248);
+  }
+  
+  input {
+    display: inline-block;
+    width: 20em;
+    margin: .5em 0;
+    color: #607D8B;
+    font-weight: bold;
+    padding: 5px 10px;
+    font: tahoma;
+  }
+  ::placeholder {
+    font-size: 13px;
+    font: tahoma;
+  }
+  
