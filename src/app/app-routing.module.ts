@@ -16,7 +16,7 @@ import { SchoolAnalysisComponent } from './school-analysis/school-analysis.compo
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboardschool', pathMatch: 'full' },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'donation', component: DonationComponent },
   { path: 'dashboardgrid', component: DashboardGridComponent },
