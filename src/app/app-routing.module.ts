@@ -13,6 +13,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { DonationComponent } from './donation/donation.component';
 import { SchoolSearchByschoolComponent } from './school-search-byschool/school-search-byschool.component';
 import { SchoolAnalysisComponent } from './school-analysis/school-analysis.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { TermsComponent } from './terms/terms.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
@@ -28,6 +30,8 @@ const routes: Routes = [
   { path: 'schools/:year/:phaseid', component: SchoolSearchComponent },
   { path: 'byschool/:name', component: SchoolSearchByschoolComponent },
   { path: 'schoolanalysis', component: SchoolAnalysisComponent },
+  { path: 'privacy', component: PrivacyComponent },
+  { path: 'terms', component: TermsComponent },
   { path: 'callback', component: CallbackComponent},
   {
     path: 'profile',

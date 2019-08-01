@@ -29,6 +29,9 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { DashboardGridComponent } from './dashboard-grid/dashboard-grid.component';
 import { DashboardBallotComponent } from './dashboard-ballot/dashboard-ballot.component';
 import { DonationComponent } from './donation/donation.component';
+import { FooterComponent } from './footer/footer.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { TermsComponent } from './terms/terms.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,10 @@ import { DonationComponent } from './donation/donation.component';
     SideBarComponent,
     DashboardGridComponent,
     DashboardBallotComponent,
-    DonationComponent
+    DonationComponent,
+    FooterComponent,
+    PrivacyComponent,
+    TermsComponent
   ],
   imports: [
     BrowserModule,
