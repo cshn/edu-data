@@ -24,9 +24,7 @@ export class DashboardHighlightComponent implements OnInit {
     {headerName: 'School', field: 'school', resizable: true,sortable: true, filter: true},
     {headerName: 'Year', field: 'year', resizable: true,sortable: true, filter: true },
     {headerName: 'Phase', field: 'phase', resizable: true,sortable: true, filter: true},
-    {headerName: 'Availability', field: 'availability', resizable: true,sortable: true, filter: true},
-    {headerName: 'Registration', field: 'registration', resizable: true,sortable: true, filter: true},
-    {headerName: 'Subscription Rate', field: 'subrate', resizable: true,sortable: true, filter: true}
+    {headerName: '2CS Availability', field: 'left', resizable: true,sortable: true, filter: true}
   ];
 
   rowData = [];
@@ -35,9 +33,9 @@ export class DashboardHighlightComponent implements OnInit {
     this.schoolListService.getSchoolsByYearByPhase(2019, 5)
       .subscribe(schools => {
         this.rowData = schools.filter(function(e){
-          return (e.availability > 0);
+          return (e.availability > e.registration);
         }).sort((n1: School, n2: School) => {
-          if(n1.registration/n1.availability < n2.registration/n2.availability) {
+          if(n1.availability - n1.registration > n2.availability - n2.registration) {
             return 1;
           } else {
             return -1;
@@ -45,12 +43,8 @@ export class DashboardHighlightComponent implements OnInit {
         });
 
         this.rowData.forEach( e => {
-          e.phase = this.phases[e.phase-1].name;
-          if (e.availability) {
-            e.subrate = Math.round(e.registration/e.availability*1000)/1000;
-          } else {
-            e.subrate = 0;
-          }
+          e.phase = this.phases[e.phase].name;
+            e.left = e.availability - e.registration;
         })
       });
   }
