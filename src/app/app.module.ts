@@ -15,7 +15,6 @@ import { CallbackComponent } from './callback/callback.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DashboardSchoolComponent } from './dashboard-school/dashboard-school.component';
 import { SchoolSearchByschoolComponent } from './school-search-byschool/school-search-byschool.component';
-import { SchoolAnalysisComponent } from './school-analysis/school-analysis.component';
 import { DashboardAnalysisComponent } from './dashboard-analysis/dashboard-analysis.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCheckboxModule} from '@angular/material';
@@ -45,7 +44,6 @@ import { PropertyNearSchoolComponent } from './property-near-school/property-nea
     ProfileComponent,
     DashboardSchoolComponent,
     SchoolSearchByschoolComponent,
-    SchoolAnalysisComponent,
     DashboardAnalysisComponent,
     DashboardHighlightComponent,
     DashboardPhaseAnalysisComponent,
