@@ -27,9 +27,8 @@ export class PropertyNearSchoolComponent implements OnInit {
     const schoolname = this.route.snapshot.paramMap.get('school');
     this.schoolListService.getNearbyProperty(schoolname)
       .subscribe(properties => {
-        console.log(properties);
         this.properties = properties.sort((n1: Property, n2: Property) => {
-          if(n1.psf < n2.psf) {
+          if(n1.psf > n2.psf) {
             return 1;
           } else {
             return -1;

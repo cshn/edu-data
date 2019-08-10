@@ -34,7 +34,6 @@ export class SchoolListService {
 
   getNearbyProperty(school: String): Observable<Property[]> {
     const url = `${this.schoolsUrl}/property/${school}`;
-    console.log(url);
     return this.http.get<Property[]>(url);
   }
 
