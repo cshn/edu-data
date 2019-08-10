@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { School } from '../school';
+import { Property } from '../model/property';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,12 @@ export class SchoolListService {
   getSchoolBySchool(schoolname: String): Observable<School[]> {
     const url = `${this.schoolsUrl}/byschool/${schoolname}`;
     return this.http.get<School[]>(url);
+  }
+
+  getNearbyProperty(school: String): Observable<Property[]> {
+    const url = `${this.schoolsUrl}/property/${school}`;
+    console.log(url);
+    return this.http.get<Property[]>(url);
   }
 
   getSchoolsByYearByPhase(year: number, phaseId: number): Observable<School[]> {

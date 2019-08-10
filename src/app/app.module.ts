@@ -32,6 +32,7 @@ import { DonationComponent } from './donation/donation.component';
 import { FooterComponent } from './footer/footer.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
+import { PropertyNearSchoolComponent } from './property-near-school/property-near-school.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { TermsComponent } from './terms/terms.component';
     DonationComponent,
     FooterComponent,
     PrivacyComponent,
-    TermsComponent
+    TermsComponent,
+    PropertyNearSchoolComponent
   ],
   imports: [
     BrowserModule,

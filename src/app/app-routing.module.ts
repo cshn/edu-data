@@ -13,6 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { DonationComponent } from './donation/donation.component';
 import { SchoolSearchByschoolComponent } from './school-search-byschool/school-search-byschool.component';
 import { SchoolAnalysisComponent } from './school-analysis/school-analysis.component';
+import { PropertyNearSchoolComponent } from './property-near-school/property-near-school.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
 import { AuthGuard } from './auth.guard';
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'dashboardhighlight', component: DashboardHighlightComponent },
   { path: 'schools/:year/:phaseid', component: SchoolSearchComponent },
   { path: 'byschool/:name', component: SchoolSearchByschoolComponent },
+  { path: 'propertynearby/:school', component: PropertyNearSchoolComponent },
   { path: 'schoolanalysis', component: SchoolAnalysisComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'terms', component: TermsComponent },

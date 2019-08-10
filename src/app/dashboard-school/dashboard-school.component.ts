@@ -13,8 +13,7 @@ export class DashboardSchoolComponent implements OnInit {
   schools: School[] = SCHOOL_STATIC;
   searcht: string;
 
-  constructor(
-    private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
