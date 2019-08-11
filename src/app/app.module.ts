@@ -32,6 +32,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
 import { PropertyNearSchoolComponent } from './property-near-school/property-near-school.component';
+import { PropertyTransactionComponent } from './property-transaction/property-transaction.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { PropertyNearSchoolComponent } from './property-near-school/property-nea
     FooterComponent,
     PrivacyComponent,
     TermsComponent,
-    PropertyNearSchoolComponent
+    PropertyNearSchoolComponent,
+    PropertyTransactionComponent
   ],
   imports: [
     BrowserModule,

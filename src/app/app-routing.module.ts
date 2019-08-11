@@ -11,6 +11,7 @@ import { DashboardHighlightComponent } from './dashboard-highlight/dashboard-hig
 import { CallbackComponent } from './callback/callback.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DonationComponent } from './donation/donation.component';
+import { PropertyTransactionComponent } from './property-transaction/property-transaction.component';
 import { SchoolSearchByschoolComponent } from './school-search-byschool/school-search-byschool.component';
 import { PropertyNearSchoolComponent } from './property-near-school/property-near-school.component';
 import { PrivacyComponent } from './privacy/privacy.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'dashboardhighlight', component: DashboardHighlightComponent },
   { path: 'schools/:year/:phaseid', component: SchoolSearchComponent },
   { path: 'byschool/:name', component: SchoolSearchByschoolComponent },
+  { path: 'transaction/:pname', component: PropertyTransactionComponent },
   { path: 'propertynearby/:school', component: PropertyNearSchoolComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'terms', component: TermsComponent },

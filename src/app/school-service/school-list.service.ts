@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { School } from '../school';
 import { Property } from '../model/property';
+import { PTransaction } from '../model/ptransaction';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,11 @@ export class SchoolListService {
   getNearbyProperty(school: String): Observable<Property[]> {
     const url = `${this.schoolsUrl}/property/${school}`;
     return this.http.get<Property[]>(url);
+  }
+
+  getPropertyTransactions(pname: String): Observable<PTransaction[]> {
+    const url = `${this.schoolsUrl}/ptransaction/${pname}`;
+    return this.http.get<PTransaction[]>(url);
   }
 
   getSchoolsByYearByPhase(year: number, phaseId: number): Observable<School[]> {

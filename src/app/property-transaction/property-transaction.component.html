@@ -1,0 +1,36 @@
+
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+        <app-side-bar></app-side-bar>
+    </div>
+</nav>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div class="container-fluid">
+        <div class="table-responsive">
+          <h6>Some transcations for this property:</h6>
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Transaction Date</th>
+                <th>Floor Level</th>
+                <th>Area (sqf)</th>
+                <th>Transaction Price</th>
+                <th>psf</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let t of transactions">
+              <tr>
+                <td>{{t.pname}}</td>
+                <td>{{t.date}}</td>
+                <td>{{t.floor}}</td>
+                <td>{{t.areasize}}</td>
+                <td>{{t.price}}</td>
+                <td>{{t.psf}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>  
+      </div>
+  </main>
