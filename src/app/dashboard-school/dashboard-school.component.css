@@ -10,27 +10,6 @@
   a {
     text-decoration: none;
   }
-  h6 {
-    padding: 8px 0;
-    text-align: center;
-    font-size: 1.6em;
-    font: tahoma;
-  }
-  .module {
-    color: #010405;
-    font-size: 0.5em;
-    width: 88%;
-    border-bottom: solid; 
-    border-bottom-width: thin;
-    border-bottom-color: #d7dee0;
-  }
-  .module:hover {
-    background-color: #8cb8cf;
-    cursor: pointer;
-    color: #010405;
-    width: 88%;
-    background-color:rgb(250, 248, 248);
-  }
   
   input {
     display: inline-block;
