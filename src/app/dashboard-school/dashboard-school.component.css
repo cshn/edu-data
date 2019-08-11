@@ -9,6 +9,11 @@
   }
   a {
     text-decoration: none;
+    color: purple;
+  }
+  a:hover { 
+    color: blue;
+    text-decoration: underline;
   }
   
   input {
