@@ -55,11 +55,17 @@
     flex-direction: column;
   }
 
-  .button-bar {
-      padding-bottom: 4px;
-  }
-
   .grid-wrapper {
     height: 20px;
     flex: 1;
   }
+
+.button-bar {
+  padding-bottom: 4px;
+}
+
+button {
+  font-size: 0.8em;
+  font: tahoma;
+  margin: 2px;
+}

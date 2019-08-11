@@ -8,8 +8,21 @@
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div class="container-fluid">
         <div class="table-responsive">
-          Some transcations for this property:
-          <button class="gobackbutton" (click)="goBack()">go back</button>
+          <div class="button-bar">
+            <button (click)="priceHistoryChart()">Plot Transaction Price History</button>
+            <button class="gobackbutton" (click)="goBack()">go back</button>
+          </div>
+          <div *ngIf="barChartLabels.length">
+              <div style="display: block">
+                <canvas baseChart
+                        [datasets]="barChartData"
+                        [labels]="barChartLabels"
+                        [options]="barChartOptions"
+                        [legend]="barChartLegend"
+                        [chartType]="barChartType">
+                </canvas>
+              </div>
+          </div>
 
           <table class="table table-striped table-sm">
             <thead>
@@ -25,7 +38,7 @@
             <tbody *ngFor="let t of transactions">
               <tr>
                 <td>{{t.pname}}</td>
-                <td>{{t.date | date : 'MMM, y'}}</td>
+                <td>{{t.date | date : 'MMM, y' : 'GMT'}}</td>
                 <td>{{t.floor}}</td>
                 <td>{{t.areasize}}</td>
                 <td>{{t.price | number}}</td>
