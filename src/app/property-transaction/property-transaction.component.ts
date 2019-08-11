@@ -28,6 +28,7 @@ export class PropertyTransactionComponent implements OnInit {
       .subscribe(trans => {
         this.transactions = trans;
       });
+
   }
 
   goBack(): void {

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { School } from '../school';
 import { Property } from '../model/property';
 import { SchoolListService }  from '../school-service/school-list.service';
 import { ActivatedRoute } from '@angular/router';
