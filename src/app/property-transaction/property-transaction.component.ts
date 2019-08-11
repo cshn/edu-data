@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PTransaction } from '../model/ptransaction';
 import { SchoolListService }  from '../school-service/school-list.service';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-property-transaction',
@@ -14,7 +15,8 @@ export class PropertyTransactionComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private schoolListService: SchoolListService) { }
+    private schoolListService: SchoolListService,
+    private location: Location) { }
 
   ngOnInit() {
     this.getTransactions();
@@ -26,5 +28,9 @@ export class PropertyTransactionComponent implements OnInit {
       .subscribe(trans => {
         this.transactions = trans;
       });
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

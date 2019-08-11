@@ -8,7 +8,9 @@
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div class="container-fluid">
         <div class="table-responsive">
-          <h6>Private Properties within 1km to school:</h6>
+          Private Properties within 1km to school:
+          <button class="gobackbutton" (click)="goBack()">go back</button>
+
           <table class="table table-striped table-sm">
             <thead>
               <tr>
@@ -24,7 +26,7 @@
             <tbody *ngFor="let p of properties">
               <tr>
                 <td>{{p.school}}</td>
-                <td>{{p.pname}}</td>
+                <td><a routerLink="/transaction/{{p.pname}}">{{p.pname}}</a></td>
                 <td>{{p.ptype}}</td>
                 <td>{{p.ptenure}}</td>
                 <td>{{p.numberofunit}}</td>
@@ -35,5 +37,4 @@
           </table>
         </div>  
       </div>
-
-</main>
+  </main>
