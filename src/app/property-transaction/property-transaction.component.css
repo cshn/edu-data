@@ -60,12 +60,16 @@
     flex: 1;
   }
 
-.button-bar {
-  padding-bottom: 4px;
-}
+  .button-bar {
+    padding-bottom: 4px;
+  }
 
-button {
-  font-size: 0.8em;
-  font: tahoma;
-  margin: 2px;
-}
+  button {
+    font-size: 0.8em;
+    font: tahoma;
+    margin: 2px;
+  }
+  .container-fluid {
+    font-size: 0.8em;
+    font: tahoma;
+  }
