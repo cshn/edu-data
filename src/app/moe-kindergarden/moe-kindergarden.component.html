@@ -1,0 +1,35 @@
+
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+        <app-side-bar></app-side-bar>
+    </div>
+</nav>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div class="container-fluid">
+        <div class="table-responsive">
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th>MOE Kindergarden Name</th>
+                <!-- <th>Service</th> -->
+                <!-- <th>Address</th> -->
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>Operation Time</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let m of mks">
+              <tr>
+                <td><a routerLink="/byschool/{{m.desc}}">{{m.mkname}}</a></td>
+                <!-- <td>{{m.desc}}</td> -->
+                <!-- <td>{{m.address}}</td> -->
+                <td>{{m.mobile}}</td>
+                <td>{{m.email}}</td>
+                <td>{{m.operationtime}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>  
+      </div>
+  </main>

@@ -14,6 +14,7 @@ import { DonationComponent } from './donation/donation.component';
 import { PropertyTransactionComponent } from './property-transaction/property-transaction.component';
 import { SchoolSearchByschoolComponent } from './school-search-byschool/school-search-byschool.component';
 import { PropertyNearSchoolComponent } from './property-near-school/property-near-school.component';
+import { MoeKindergardenComponent } from './moe-kindergarden/moe-kindergarden.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
 import { AuthGuard } from './auth.guard';
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'dashboardanalysis', component: DashboardAnalysisComponent },
   { path: 'dashboardphaseanalysis', component: DashboardPhaseAnalysisComponent },
   { path: 'dashboardhighlight', component: DashboardHighlightComponent },
+  { path: 'moekindergarden', component: MoeKindergardenComponent },
   { path: 'schools/:year/:phaseid', component: SchoolSearchComponent },
   { path: 'byschool/:name', component: SchoolSearchByschoolComponent },
   { path: 'transaction/:pname', component: PropertyTransactionComponent },

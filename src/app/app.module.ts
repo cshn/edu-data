@@ -33,6 +33,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
 import { PropertyNearSchoolComponent } from './property-near-school/property-near-school.component';
 import { PropertyTransactionComponent } from './property-transaction/property-transaction.component';
+import { MoeKindergardenComponent } from './moe-kindergarden/moe-kindergarden.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { PropertyTransactionComponent } from './property-transaction/property-tr
     PrivacyComponent,
     TermsComponent,
     PropertyNearSchoolComponent,
-    PropertyTransactionComponent
+    PropertyTransactionComponent,
+    MoeKindergardenComponent
   ],
   imports: [
     BrowserModule,
