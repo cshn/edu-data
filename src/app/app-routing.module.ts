@@ -17,11 +17,13 @@ import { PropertyNearSchoolComponent } from './property-near-school/property-nea
 import { MoeKindergardenComponent } from './moe-kindergarden/moe-kindergarden.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
+import { SitemapComponent } from './sitemap/sitemap.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'sitemap', component: SitemapComponent },
   { path: 'donation', component: DonationComponent },
   { path: 'dashboardgrid', component: DashboardGridComponent },
   { path: 'dashboardschool', component: DashboardSchoolComponent },
