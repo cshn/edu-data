@@ -5,13 +5,14 @@ import { School } from '../school';
 import { Property } from '../model/property';
 import { PTransaction } from '../model/ptransaction';
 import { Mk } from '../model/mk';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class SchoolListService {
-  private schoolsUrl = 'https://murmuring-cove-54677.herokuapp.com';  // URL to web api
+  private schoolsUrl = environment.url;  // URL to web api
   constructor(private http: HttpClient) { }
 
   getAllSchoolBallot(): Observable<School[]> {
