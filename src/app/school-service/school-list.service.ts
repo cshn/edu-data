@@ -69,6 +69,11 @@ export class SchoolListService {
     const url = `${this.schoolsUrl}/propertylist`;
     return this.http.get<String[]>(url);
   }
+
+  saveAdvertisement(pname: String, salesno: String, price: String, bedroom: String, size: String, mobile: String, comment: String):  Observable<String> {
+    const url = `${this.schoolsUrl}/saveadv/${pname}/${salesno}/${price}/${bedroom}/${size}/${mobile}/${comment}`;
+    return this.http.get<String>(url);
+  }
   
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
