@@ -64,6 +64,11 @@ export class SchoolListService {
     const url = `${this.schoolsUrl}/allmk`;
     return this.http.get<Mk[]>(url);
   }
+
+  getPropertyList(): Observable<String[]> {
+    const url = `${this.schoolsUrl}/propertylist`;
+    return this.http.get<String[]>(url);
+  }
   
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

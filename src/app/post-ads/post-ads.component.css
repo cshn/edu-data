@@ -72,3 +72,21 @@
     font: tahoma;
   }
   
+  input {
+    display: inline-block;
+    width: 20em;
+    margin: .5em 0;
+    color: #607D8B;
+    font-weight: bold;
+    padding: 5px 10px;
+    font: tahoma;
+  }
+
+  select {
+    width: 20em;
+    margin: .5em 0;
+    color: #607D8B;
+    font-weight: bold;
+    padding: 5px 10px;
+    font: tahoma;
+  }

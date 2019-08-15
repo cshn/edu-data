@@ -9,28 +9,22 @@
     <div class="container-fluid">
 
       <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
-          <label for="price">
-            Asking Price:
-          </label>
+          <select class="form-control" formControlName="property" id="property" required>
+            <option *ngFor="let p of pList" [value]="p">{{p}}</option>
+          </select>
+          <input id="salesregno" type="text" formControlName="salesregno" placeholder="Sales Registration No">
           <br>
-          <input id="price" type="text" formControlName="price">
+          <input id="price" type="text" formControlName="price" placeholder="Asking Price">
           <br>
-          <label for="bedroom">
-            Number of Bedroom:
-          </label>
+          <input id="bedroom" type="text" formControlName="bedroom" placeholder = "Number of Bedrooms">
           <br>
-          <input id="bedroom" type="text" formControlName="bedroom">
+          <input id="size" type="text" formControlName="size" placeholder="Size (sqft)">
           <br>
-
-            <label for="mobile">
-              Mobile Number:
-            </label>
-            <br>
-            <input id="mobile" type="text" formControlName="mobile">
-            <br>
-            <br>
-            <button class="button" type="submit">Submit</button>
-
+          <input id="mobile" type="text" formControlName="mobile" placeholder="Mobile Number">
+          <br>
+          <input id="comment" type="text" formControlName="comment" placeholder="Other Comment">
+          <br>
+          <button class="button" type="submit">Submit</button>
       </form>
     </div>
 </main>
