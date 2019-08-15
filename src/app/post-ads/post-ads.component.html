@@ -1,3 +1,36 @@
-<p>
-  post-ads works!
-</p>
+
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+        <app-side-bar></app-side-bar>
+    </div>
+</nav>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div class="container-fluid">
+
+      <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+          <label for="price">
+            Asking Price:
+          </label>
+          <br>
+          <input id="price" type="text" formControlName="price">
+          <br>
+          <label for="bedroom">
+            Number of Bedroom:
+          </label>
+          <br>
+          <input id="bedroom" type="text" formControlName="bedroom">
+          <br>
+
+            <label for="mobile">
+              Mobile Number:
+            </label>
+            <br>
+            <input id="mobile" type="text" formControlName="mobile">
+            <br>
+            <br>
+            <button class="button" type="submit">Submit</button>
+
+      </form>
+    </div>
+</main>

@@ -8,7 +8,7 @@ import { FilterPipe} from './filter.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule }    from '@angular/common/http';
 import { SchoolSearchComponent } from './school-search/school-search.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component'; 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CallbackComponent } from './callback/callback.component';
@@ -69,6 +69,7 @@ import { PostAdsComponent } from './post-ads/post-ads.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     NgbModule,
     BrowserAnimationsModule,
     MatButtonModule, 

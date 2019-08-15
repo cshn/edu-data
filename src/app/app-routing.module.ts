@@ -18,11 +18,13 @@ import { MoeKindergardenComponent } from './moe-kindergarden/moe-kindergarden.co
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
+import { PostAdsComponent } from './post-ads/post-ads.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'postads', component: PostAdsComponent },
   { path: 'sitemap', component: SitemapComponent },
   { path: 'donation', component: DonationComponent },
   { path: 'dashboardgrid', component: DashboardGridComponent },
