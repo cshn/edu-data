@@ -5,6 +5,7 @@ import { School } from '../school';
 import { Property } from '../model/property';
 import { PTransaction } from '../model/ptransaction';
 import { Mk } from '../model/mk';
+import { Posting } from '../model/posting';
 import {environment} from '../../environments/environment';
 
 @Injectable({
@@ -72,7 +73,13 @@ export class SchoolListService {
 
   saveAdvertisement(pname: String, salesno: String, price: String, bedroom: String, size: String, mobile: String, comment: String):  Observable<String> {
     const url = `${this.schoolsUrl}/saveadv/${pname}/${salesno}/${price}/${bedroom}/${size}/${mobile}/${comment}`;
+    console.log(url);
     return this.http.get<String>(url);
+  }
+
+  getAllPosting(): Observable<Posting[]> {
+    const url = `${this.schoolsUrl}/getallposting`;
+    return this.http.get<Posting[]>(url);
   }
   
   private handleError<T> (operation = 'operation', result?: T) {
