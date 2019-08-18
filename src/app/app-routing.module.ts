@@ -22,7 +22,7 @@ import { PostAdsComponent } from './post-ads/post-ads.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/dashboardhighlight', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'postads', component: PostAdsComponent },
   { path: 'sitemap', component: SitemapComponent },

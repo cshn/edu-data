@@ -7,4 +7,5 @@ export class Posting {
     size: string;
     mobile: string;
     comment: string;
+    createdon: Date;
   }

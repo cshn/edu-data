@@ -41,15 +41,29 @@ export class PostAdsComponent implements OnInit {
   getPropertyList(): void {
     this.schoolListService.getPropertyList()
       .subscribe(p => {
-        this.pList = p;
+        this.pList = p.sort((n1: String, n2: String) => {
+          if(n1 > n2) {
+            return 1;
+          } else {
+            return -1;
+          }
+        })
       });
   };
 
   getAllPosting(): void {
     this.schoolListService.getAllPosting()
       .subscribe(p => {
-        this.postings = p;
+        this.postings = p.sort((n1: Posting, n2: Posting) => {
+          if(n1.createdon < n2.createdon) {
+            return 1;
+          } else {
+            return -1;
+          }
+        });
+        
       });
+      
   };
 
   getAllActiveAgent(): void {
@@ -64,13 +78,15 @@ export class PostAdsComponent implements OnInit {
 
   onSubmit(customerData) {
     var salesRegNo = customerData.salesregno;
-    console.log(salesRegNo);
+   // console.log(salesRegNo);
+    
     if (this.regNoList.indexOf(salesRegNo) > -1) {
       this.schoolListService.saveAdvertisement(customerData.property, customerData.salesregno, customerData.price, customerData.bedroom,
         customerData.size, customerData.mobile, customerData.comment).subscribe(p => {
           this.saveMessage = p;
+          alert('You have uploaded posting successfully');
+          this.getAllPosting();
         });
-      console.warn('Your order has been submitted', customerData);
     } else {
       console.error('Your sales registration no does not exist');
       alert('Your sales registration no ' + salesRegNo + ' does not exist, please input a valid sales registration no');
