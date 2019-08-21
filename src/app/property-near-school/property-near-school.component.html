@@ -9,30 +9,28 @@
     <div class="container-fluid">
         <div class="table-responsive">
           <div class="button-bar">
-            Private Properties within 1km to school (Please verify with <a href="https://www.onemap.sg/main/v2/">OneMap</a>):         
+            Private Properties within 2km to school (Data from <a href="https://www.onemap.sg/main/v2/">OneMap</a>):         
             <button class="gobackbutton" (click)="goBack()">go back</button>
           </div>
           <table class="table table-striped table-sm">
             <thead>
               <tr>
                 <th>School</th>
-                <th>Property</th>
-                <th>Type</th>
-                <th>Tenure</th>
-                <th>Number of Units</th>
-                <th>TOP</th>
-                <th>psf</th>
+                <th>Project</th>
+                <th>Blk</th>
+                <th>Distance</th>
+                <th>Postal</th>
+                <th>Road</th>
               </tr>
             </thead>
             <tbody *ngFor="let p of properties">
               <tr>
                 <td>{{p.school}}</td>
-                <td><a routerLink="/transaction/{{p.pname}}">{{p.pname}}</a></td>
-                <td>{{p.ptype}}</td>
-                <td>{{p.ptenure}}</td>
-                <td>{{p.numberofunit}}</td>
-                <td>{{p.top}}</td>
-                <td>{{p.psf}}</td>
+                <td><a routerLink="/transaction/{{p.project}}">{{p.project}}</a></td>
+                <td>{{p.blk}}</td>
+                <td>{{p.distance|number}} km</td>
+                <td>{{p.postal}}</td>
+                <td>{{p.road}}</td>
               </tr>
             </tbody>
           </table>

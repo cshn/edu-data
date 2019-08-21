@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PTransaction } from '../model/ptransaction';
+import { UraTransaction } from '../model/ptransaction';
+import { UraTranDetail } from '../model/ptransaction';
+import { Posting } from '../model/posting';
 import { SchoolListService }  from '../school-service/school-list.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -12,7 +14,9 @@ import * as moment from 'moment';
 })
 export class PropertyTransactionComponent implements OnInit {
 
-  transactions: PTransaction[];
+  tranMaster: UraTransaction;
+  transactionList: UraTranDetail[];
+  postings: Posting[];
 
   constructor(
     private route: ActivatedRoute,
@@ -21,29 +25,42 @@ export class PropertyTransactionComponent implements OnInit {
 
   ngOnInit() {
     this.getTransactions();
+    this.getPostings();
   }
 
-  public barChartOptions = {
-    scaleShowVerticalLines: false,
-    responsive: true,
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true
-        }
-      }]
-    }
-  };
-  public barChartLabels = [];
-  public barChartType = 'line';
-  public barChartLegend = true;
-  public barChartData = [];
+  getPostings(): void {
+    const pname = this.route.snapshot.paramMap.get('pname');
+    this.schoolListService.getPosting(pname)
+      .subscribe(posting => {
+        this.postings = posting.sort((n1: Posting, n2: Posting) => {
+          if(n1.createdon < n2.createdon) {
+            return 1;
+          } else {
+            return -1;
+          }
+        });
+      });
+  }
 
   getTransactions(): void {
     const pname = this.route.snapshot.paramMap.get('pname');
     this.schoolListService.getPropertyTransactions(pname)
       .subscribe(trans => {
-        this.transactions = trans;
+        this.tranMaster = trans[0];
+        
+        this.transactionList = this.tranMaster.transaction.forEach((n: UraTranDetail) => {
+          var month = parseInt(n.contractDate.substring(0,2));
+          var year = parseInt('20'+n.contractDate.substring(2,4));
+          n.cDate = new Date(year, month);
+        });
+        
+        this.transactionList = this.tranMaster.transaction.sort((n1: UraTranDetail, n2: UraTranDetail) => {
+          if(n1.cDate < n2.cDate) {
+            return 1;
+          } else {
+            return -1;
+          }
+        });
       });
   }
 
@@ -51,20 +68,35 @@ export class PropertyTransactionComponent implements OnInit {
     this.location.back();
   }
 
-  priceHistoryChart(): void {
-    this.barChartData = [];
-    this.barChartLabels = [];
+  // public barChartOptions = {
+  //   scaleShowVerticalLines: false,
+  //   responsive: true,
+  //   scales: {
+  //     yAxes: [{
+  //       ticks: {
+  //         beginAtZero: true
+  //       }
+  //     }]
+  //   }
+  // };
+  // public barChartLabels = [];
+  // public barChartType = 'line';
+  // public barChartLegend = true;
+  // public barChartData = [];
+  // priceHistoryChart(): void {
+  //   this.barChartData = [];
+  //   this.barChartLabels = [];
 
-    var priceData = [];
-    var psfData = [];
-    var pname = this.transactions[0].pname;
-    for(var i = this.transactions.length-1; i >= 0; i=i-1) {
-      this.barChartLabels.push(moment(this.transactions[i].date).format('YYYY-MM'));
-   //   priceData.push(this.transactions[i].price);
-      psfData.push(this.transactions[i].psf);
-    }
-    //this.barChartData.push({data: priceData, label: "price"});
-    this.barChartData.push({data: psfData, label: pname + " (psf)"});
+  //   var priceData = [];
+  //   var psfData = [];
+  //   var pname = this.transactions[0].pname;
+  //   for(var i = this.transactions.length-1; i >= 0; i=i-1) {
+  //     this.barChartLabels.push(moment(this.transactions[i].date).format('YYYY-MM'));
+  //  //   priceData.push(this.transactions[i].price);
+  //     psfData.push(this.transactions[i].psf);
+  //   }
+  //   //this.barChartData.push({data: priceData, label: "price"});
+  //   this.barChartData.push({data: psfData, label: pname + " (psf)"});
     
-  }
+  // }
 }

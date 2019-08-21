@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { School } from '../school';
-import { Property } from '../model/property';
-import { PTransaction } from '../model/ptransaction';
+import { UraProperty } from '../model/property';
+import { UraTransaction } from '../model/ptransaction';
 import { Mk } from '../model/mk';
 import { Posting } from '../model/posting';
 import {environment} from '../../environments/environment';
@@ -36,14 +36,24 @@ export class SchoolListService {
     return this.http.get<School[]>(url);
   }
 
-  getNearbyProperty(school: String): Observable<Property[]> {
-    const url = `${this.schoolsUrl}/property/${school}`;
-    return this.http.get<Property[]>(url);
+  // getNearbyProperty(school: String): Observable<Property[]> {
+  //   const url = `${this.schoolsUrl}/property/${school}`;
+  //   return this.http.get<Property[]>(url);
+  // }
+
+  getNearbyProperty(school: String): Observable<UraProperty[]> {
+    const url = `${this.schoolsUrl}/spd/${school}`;
+    return this.http.get<UraProperty[]>(url);
   }
 
-  getPropertyTransactions(pname: String): Observable<PTransaction[]> {
-    const url = `${this.schoolsUrl}/ptransaction/${pname}`;
-    return this.http.get<PTransaction[]>(url);
+  // getPropertyTransactions(pname: String): Observable<PTransaction[]> {
+  //   const url = `${this.schoolsUrl}/ptransaction/${pname}`;
+  //   return this.http.get<PTransaction[]>(url);
+  // }
+
+  getPropertyTransactions(pname: String): Observable<UraTransaction[]> {
+    const url = `${this.schoolsUrl}/uratransaction/${pname}`;
+    return this.http.get<UraTransaction[]>(url);
   }
 
   getSchoolsByYearByPhase(year: number, phaseId: number): Observable<School[]> {
@@ -79,6 +89,11 @@ export class SchoolListService {
 
   getAllPosting(): Observable<Posting[]> {
     const url = `${this.schoolsUrl}/getallposting`;
+    return this.http.get<Posting[]>(url);
+  }
+
+  getPosting(pname: String): Observable<Posting[]> {
+    const url = `${this.schoolsUrl}/getposting/${pname}`;
     return this.http.get<Posting[]>(url);
   }
   
