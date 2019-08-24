@@ -11,9 +11,7 @@
 
   <div class="col-md-4 themed-grid-col">
       <a *ngFor="let school of schools | filter : searcht" routerLink="/propertynearby/{{school.school}}" >
-        <!-- <div class="module"> -->
           <p>{{school.school}}</p>
-        <!-- </div> -->
       </a>
   </div>
 

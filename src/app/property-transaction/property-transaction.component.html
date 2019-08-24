@@ -9,10 +9,10 @@
     <div class="container-fluid">
         <div class="table-responsive">
           <div class="button-bar">
-            <!-- <button (click)="priceHistoryChart()">Plot Transaction Price History</button> -->
+            <button (click)="priceHistoryChart()">Plot Transaction Price History</button>
             <button class="gobackbutton" (click)="goBack()">go back</button>
           </div>
-        <!--  <div *ngIf="barChartLabels.length">
+         <div *ngIf="barChartLabels.length">
               <div style="display: block">
                 <canvas baseChart
                         [datasets]="barChartData"
@@ -22,7 +22,7 @@
                         [chartType]="barChartType">
                 </canvas>
               </div>
-          </div> -->
+          </div>
 
           <table class="table table-striped table-sm">
               <thead>

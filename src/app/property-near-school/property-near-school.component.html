@@ -9,7 +9,7 @@
     <div class="container-fluid">
         <div class="table-responsive">
           <div class="button-bar">
-            Private Properties within 2km to school (Data from <a href="https://www.onemap.sg/main/v2/">OneMap</a>):  
+            Data is from <a href="https://www.onemap.sg/main/v2/">OneMap</a>:
             <button (click)="filterByType()">Non Landed</button>
             <button (click)="getAll()">All Private</button>      
             <button class="gobackbutton" (click)="goBack()">go back</button>
@@ -19,6 +19,7 @@
               <tr>
                 <th>School</th>
                 <th>Project</th>
+                <th>Type</th>
                 <th>Blk</th>
                 <th>Distance</th>
                 <th>Postal</th>
@@ -29,6 +30,7 @@
               <tr>
                 <td>{{p.school}}</td>
                 <td><a routerLink="/transaction/{{p.project}}">{{p.project}}</a></td>
+                <td>{{projectType[p.project]}}</td>
                 <td>{{p.blk}}</td>
                 <td>{{p.distance|number}} km</td>
                 <td>{{p.postal}}</td>

@@ -68,35 +68,34 @@ export class PropertyTransactionComponent implements OnInit {
     this.location.back();
   }
 
-  // public barChartOptions = {
-  //   scaleShowVerticalLines: false,
-  //   responsive: true,
-  //   scales: {
-  //     yAxes: [{
-  //       ticks: {
-  //         beginAtZero: true
-  //       }
-  //     }]
-  //   }
-  // };
-  // public barChartLabels = [];
-  // public barChartType = 'line';
-  // public barChartLegend = true;
-  // public barChartData = [];
-  // priceHistoryChart(): void {
-  //   this.barChartData = [];
-  //   this.barChartLabels = [];
+  public barChartOptions = {
+    scaleShowVerticalLines: false,
+    responsive: true,
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  };
+  public barChartLabels = [];
+  public barChartType = 'line';
+  public barChartLegend = true;
+  public barChartData = [];
 
-  //   var priceData = [];
-  //   var psfData = [];
-  //   var pname = this.transactions[0].pname;
-  //   for(var i = this.transactions.length-1; i >= 0; i=i-1) {
-  //     this.barChartLabels.push(moment(this.transactions[i].date).format('YYYY-MM'));
-  //  //   priceData.push(this.transactions[i].price);
-  //     psfData.push(this.transactions[i].psf);
-  //   }
-  //   //this.barChartData.push({data: priceData, label: "price"});
-  //   this.barChartData.push({data: psfData, label: pname + " (psf)"});
+  priceHistoryChart(): void {
+    this.barChartData = [];
+    this.barChartLabels = [];
+
+    var priceData = [];
+    for(var i = this.transactionList.length-1; i >= 0; i=i-1) {
+      this.barChartLabels.push(moment(this.transactionList[i].cDate).format('YYYY-MM'));
+     priceData.push(this.transactionList[i].price);
+      // psfData.push(this.transactionList[i].price);
+    }
+    this.barChartData.push({data: priceData, label: "price"});
+    // this.barChartData.push({data: psfData, label: pname + " (psf)"});
     
-  // }
+  }
 }

@@ -36,20 +36,15 @@ export class SchoolListService {
     return this.http.get<School[]>(url);
   }
 
-  // getNearbyProperty(school: String): Observable<Property[]> {
-  //   const url = `${this.schoolsUrl}/property/${school}`;
-  //   return this.http.get<Property[]>(url);
-  // }
-
   getNearbyProperty(school: String): Observable<UraProperty[]> {
     const url = `${this.schoolsUrl}/spd/${school}`;
     return this.http.get<UraProperty[]>(url);
   }
 
-  // getPropertyTransactions(pname: String): Observable<PTransaction[]> {
-  //   const url = `${this.schoolsUrl}/ptransaction/${pname}`;
-  //   return this.http.get<PTransaction[]>(url);
-  // }
+  getNearbyPropertyBlk(school: String, project: String): Observable<UraProperty[]> {
+    const url = `${this.schoolsUrl}/spd/${school}/${project}`;
+    return this.http.get<UraProperty[]>(url);
+  }
 
   getPropertyTransactions(pname: String): Observable<UraTransaction[]> {
     const url = `${this.schoolsUrl}/uratransaction/${pname}`;

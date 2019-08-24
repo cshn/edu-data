@@ -28,3 +28,7 @@ input {
   font-size: 13px;
   font: tahoma;
 }
+
+p {
+  font-size: 0.8em;
+}

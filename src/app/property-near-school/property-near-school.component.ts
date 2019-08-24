@@ -39,6 +39,12 @@ export class PropertyNearSchoolComponent implements OnInit {
         })
 
         this.filteredProperties = properties.sort((n1: UraProperty, n2: UraProperty) => {
+          if(n1.distance < n2.distance) {
+            return 1;
+          } else {
+            return -1;
+          }
+        }).sort((n1: UraProperty, n2: UraProperty) => {
           if(this.projectHash[n1.project] > this.projectHash[n2.project]) {
             return 1;
           } else {
@@ -52,9 +58,14 @@ export class PropertyNearSchoolComponent implements OnInit {
           this.schoolListService.getPropertyTransactions(e)
           .subscribe(trans => {
             this.projectType[e] = trans[0].transaction[0].propertyType;
+            for (var i = 1; i < trans[0].transaction.length; i++) {
+              if (trans[0].transaction[i].propertyType != this.projectType[e]) {
+                this.projectType[e] = "Mixed Type";
+                break;
+              }
+            }
           });
         })
-
       });
   }
 
