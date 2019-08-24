@@ -6,7 +6,10 @@
 
 <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
   <div class="button-bar">
-    <div *ngIf="showbutton"><button (click)="topSchool()">Show Me Top 10 Difficult to Enter School</button></div>
+    <div *ngIf="showbutton">
+      <button (click)="topSchool()">Top 10 Difficult to Enter School</button>
+      <button class="gobackbutton" (click)="goBack()">go back</button>
+    </div>
   </div>
   <div class="outer-div">
         <ag-grid-angular 

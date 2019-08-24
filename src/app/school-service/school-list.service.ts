@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { School } from '../school';
+import { School, SchoolGrc } from '../school';
 import { UraProperty } from '../model/property';
 import { UraTransaction } from '../model/ptransaction';
 import { Mk } from '../model/mk';
@@ -90,6 +90,11 @@ export class SchoolListService {
   getPosting(pname: String): Observable<Posting[]> {
     const url = `${this.schoolsUrl}/getposting/${pname}`;
     return this.http.get<Posting[]>(url);
+  }
+
+  getAllSchoolWithGrc(): Observable<SchoolGrc[]> {
+    const url = `${this.schoolsUrl}/allschool/grc`;
+    return this.http.get<SchoolGrc[]>(url);
   }
   
   private handleError<T> (operation = 'operation', result?: T) {

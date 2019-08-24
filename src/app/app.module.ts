@@ -22,7 +22,6 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { ChartsModule } from 'ng2-charts';
 import { DashboardHighlightComponent } from './dashboard-highlight/dashboard-highlight.component';
-import { DashboardPhaseAnalysisComponent } from './dashboard-phase-analysis/dashboard-phase-analysis.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { DashboardGridComponent } from './dashboard-grid/dashboard-grid.component';
@@ -50,7 +49,6 @@ import { PostAdsComponent } from './post-ads/post-ads.component';
     SchoolSearchByschoolComponent,
     DashboardAnalysisComponent,
     DashboardHighlightComponent,
-    DashboardPhaseAnalysisComponent,
     SideBarComponent,
     DashboardGridComponent,
     DashboardBallotComponent,

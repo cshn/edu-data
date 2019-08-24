@@ -6,7 +6,6 @@ import { DashboardBallotComponent } from './dashboard-ballot/dashboard-ballot.co
 import { DashboardGridComponent } from './dashboard-grid/dashboard-grid.component';
 import { DashboardSchoolComponent } from './dashboard-school/dashboard-school.component';
 import { DashboardAnalysisComponent } from './dashboard-analysis/dashboard-analysis.component';
-import { DashboardPhaseAnalysisComponent } from './dashboard-phase-analysis/dashboard-phase-analysis.component';
 import { DashboardHighlightComponent } from './dashboard-highlight/dashboard-highlight.component';
 import { CallbackComponent } from './callback/callback.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -31,7 +30,6 @@ const routes: Routes = [
   { path: 'dashboardschool', component: DashboardSchoolComponent },
   { path: 'dashboardballot', component: DashboardBallotComponent },
   { path: 'dashboardanalysis', component: DashboardAnalysisComponent },
-  { path: 'dashboardphaseanalysis', component: DashboardPhaseAnalysisComponent },
   { path: 'dashboardhighlight', component: DashboardHighlightComponent },
   { path: 'moekindergarden', component: MoeKindergardenComponent },
   { path: 'schools/:year/:phaseid', component: SchoolSearchComponent },

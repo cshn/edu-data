@@ -6,3 +6,8 @@ export class School {
     registration: number;
     size: number;
   }
+
+  export class SchoolGrc {
+    school: string;
+    grc: string;
+  }

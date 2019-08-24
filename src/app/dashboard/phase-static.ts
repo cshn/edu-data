@@ -6,6 +6,5 @@ export const PHASE_STATIC: Phase[] = [
     { id: 3, name: 'Phase 2A(2)', description: 'Another child previousely studying or you are a school staff member or your child is in MOE Kindergarden.' },
     { id: 4, name: 'Phase 2B', description: '2B' },
     { id: 5, name: 'Phase 2C', description: '2C' },
-    { id: 6, name: 'Phase 2CS', description: '2CS' },
-    { id: 7, name: 'Phase 3', description: '3' }
+    { id: 6, name: 'Phase 2CS', description: '2CS' }
 ];
