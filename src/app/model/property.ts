@@ -14,20 +14,9 @@ export class UraProperty {
   _id: string;
   school: string;
   project: string;
+  type: string;
   road: string;
   blk: string;
   postal: string;
   distance: number;
-}
-
-export class UraDetailProperty {
-  blk: string;
-  postal: string;
-  distance: number;
-}
-
-export class UraMasterProperty {
-  project: string;
-  road: string;
-  details: UraDetailProperty[];
 }

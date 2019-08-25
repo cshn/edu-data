@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UraProperty, UraMasterProperty } from '../model/property';
+import { UraProperty } from '../model/property';
 import { SchoolListService }  from '../school-service/school-list.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -12,10 +12,8 @@ import { IHash,IStringHash } from '../model/ihash';
 })
 export class PropertyNearSchoolComponent implements OnInit {
 
-  properties: UraProperty[];
   filteredProperties: UraProperty[];
   projectSet = new Set();
-  projectType : IStringHash = {};
   projectHash : IHash = {};
 
   constructor(
@@ -51,36 +49,7 @@ export class PropertyNearSchoolComponent implements OnInit {
             return -1;
           }
         });
-
-        this.properties = this.filteredProperties;
-
-        this.projectSet.forEach(e => {
-          this.schoolListService.getPropertyTransactions(e)
-          .subscribe(trans => {
-            this.projectType[e] = trans[0].transaction[0].propertyType;
-            for (var i = 1; i < trans[0].transaction.length; i++) {
-              if (trans[0].transaction[i].propertyType != this.projectType[e]) {
-                this.projectType[e] = "Mixed Type";
-                break;
-              }
-            }
-          });
-        })
       });
-  }
-
-  filterByType(): void {
-    this.filteredProperties = this.filteredProperties.filter(p => {
-      if (this.projectType[p.project] == "Condominium" || this.projectType[p.project] == "Executive Condominium" || this.projectType[p.project] == "Apartment") {
-        return true;
-      } else {
-        return false;
-      }
-    });
-  }
-
-  getAll(): void {
-    this.filteredProperties = this.properties;
   }
 
   goBack(): void {
