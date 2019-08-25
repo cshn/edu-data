@@ -17,7 +17,6 @@ export class SchoolSearchComponent implements OnInit {
   searchtext: string;
   tag: string;
   phases: Phase[] = PHASE_STATIC;
-  showbutton = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -62,49 +61,6 @@ export class SchoolSearchComponent implements OnInit {
       return element.id === phaseid;
     });
     return found.name;
-  }
-
-  public barChartOptions = {
-    scaleShowVerticalLines: false,
-    responsive: true,
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true,
-          callback: function (value) {
-            return (value * 100).toFixed(0) + '%'; // convert it to percentage
-          }
-        }
-      }]
-    }
-  };
-  public barChartLabels = [];
-  public barChartType = 'bar';
-  public barChartLegend = true;
-  public barChartData = [];
-
-  topSchool(): void {
-    this.barChartData = [];
-    this.barChartLabels = [];
-    this.schools.forEach(e => {
-      if(e.subrate > 0) {
-        this.barChartLabels.push(e.school);
-      }
-    })
-    this.schools.sort(function(first, second) {
-      return second.subrate - first.subrate;
-    });
-    
-    //Result
-    var chartData = [];
-    this.barChartLabels = [];
-    this.schools.slice(0,10).forEach(e => {
-      this.barChartLabels.push(e.school);
-      chartData.push(e.subrate);
-    })
-
-    this.barChartData.push({data: chartData, label: "Top 10 Difficult to Enter School"});
-    
   }
   
 }
