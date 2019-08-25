@@ -1,35 +1,43 @@
 /* DashboardComponent's private CSS styles */
-  [class*='col-'] {
-    float: left;
-    padding-right: 20px;
-    padding-bottom: 20px;
-  }
-  [class*='col-']:last-of-type {
-    padding-right: 0;
-  }
-  a {
-    text-decoration: none;
-    color: purple;
-  }
-  a:hover { 
-    color: blue;
-    text-decoration: underline;
-  }
-  
-  input {
-    display: inline-block;
-    width: 20em;
-    margin: .5em 0;
-    color: #607D8B;
-    font-weight: bold;
-    padding: 5px 10px;
-    font: tahoma;
-  }
-  ::placeholder {
-    font-size: 13px;
-    font: tahoma;
-  }
-  
-  p {
-    font-size: 0.8em;
-  }
+[class*='col-'] {
+  float: left;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
+td {
+  text-decoration: none;
+}
+td:hover { 
+  color: blueviolet;
+  text-decoration: underline;
+}
+input {
+  display: inline-block;
+  width: 20em;
+  margin: .5em 0;
+  color: #607D8B;
+  font-weight: bold;
+  padding: 5px 10px;
+  font: tahoma;
+}
+::placeholder {
+  font-size: 13px;
+  font: tahoma;
+}
+.grid-pad {
+  padding: 10px 0;
+}
+.grid-pad > [class*='col-']:last-of-type {
+  padding-right: 20px;
+}
+.container-fluid {
+  font-size: 0.8em;
+  font: tahoma;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+

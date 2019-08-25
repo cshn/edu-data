@@ -17,8 +17,6 @@ export class SchoolSearchComponent implements OnInit {
   searchtext: string;
   tag: string;
   phases: Phase[] = PHASE_STATIC;
-  private gridApi;
-  private gridColumnApi;
   showbutton = 0;
 
   constructor(
@@ -31,17 +29,6 @@ export class SchoolSearchComponent implements OnInit {
     this.getSchools();
   }
 
-  columnDefs = [
-    {headerName: 'School', field: 'school', resizable: true,sortable: true, filter: true},
-    {headerName: 'Year', field: 'year', resizable: true,sortable: true, filter: true },
-    {headerName: 'Phase', field: 'phase', resizable: true,sortable: true, filter: true},
-    {headerName: 'Availability', field: 'availability', resizable: true,sortable: true, filter: true},
-    {headerName: 'Registration', field: 'registration', resizable: true,sortable: true, filter: true},
-    {headerName: 'Subscription Rate', field: 'subrate', resizable: true,sortable: true, filter: true}
-  ];
-
-  rowData = [];
-
   getSchools(): void {
     this.phases = PHASE_STATIC;
     const id = +this.route.snapshot.paramMap.get('phaseid');
@@ -49,26 +36,32 @@ export class SchoolSearchComponent implements OnInit {
     this.tag = "Year " + year + ", " + this.phases[id-1].name + " ";
     this.schoolListService.getSchoolsByYearByPhase(year,id)
       .subscribe(schools => {
-        this.rowData = schools.sort((n1: School, n2: School) => {
-          if(n1.year < n2.year) {
-            return 1;
-          } else {
-            return -1;
-          }
-        });
-        this.rowData.forEach( e => {
-          e.phase = this.phases[e.phase-1].name;
+        schools.forEach( e => {
           if (e.availability > 0) {
             e.subrate = Math.round(e.registration/e.availability*1000)/1000;
           } else {
             e.subrate = 0;
           }
         })
+        this.schools = schools.sort((n1: School, n2: School) => {
+          if(n1.subrate < n2.subrate) {
+            return 1;
+          } else {
+            return -1;
+          }
+        });
       });
   }
 
   goBack(): void {
     this.location.back();
+  }
+
+  getPhase(phaseid: number): String {
+    var found = this.phases.find(function(element) {
+      return element.id === phaseid;
+    });
+    return found.name;
   }
 
   public barChartOptions = {
@@ -93,40 +86,25 @@ export class SchoolSearchComponent implements OnInit {
   topSchool(): void {
     this.barChartData = [];
     this.barChartLabels = [];
-    this.rowData.forEach(e => {
+    this.schools.forEach(e => {
       if(e.subrate > 0) {
         this.barChartLabels.push(e.school);
       }
     })
-    this.rowData.sort(function(first, second) {
+    this.schools.sort(function(first, second) {
       return second.subrate - first.subrate;
     });
     
     //Result
     var chartData = [];
     this.barChartLabels = [];
-    this.rowData.slice(0,10).forEach(e => {
+    this.schools.slice(0,10).forEach(e => {
       this.barChartLabels.push(e.school);
       chartData.push(e.subrate);
     })
 
     this.barChartData.push({data: chartData, label: "Top 10 Difficult to Enter School"});
     
-  }
-
-  autoSizeAll() {
-    var allColumnIds = [];
-    this.gridColumnApi.getAllColumns().forEach(function(column) {
-      allColumnIds.push(column.colId);
-    });
-    this.gridColumnApi.autoSizeColumns(allColumnIds);
-  }
-
-  onGridReady(params) {
-    this.gridApi = params.api;
-    this.gridColumnApi = params.columnApi;
-    this.autoSizeAll();
-    this.showbutton = 1;
   }
   
 }

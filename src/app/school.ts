@@ -5,6 +5,7 @@ export class School {
     availability: number;
     registration: number;
     size: number;
+    subrate: number;
   }
 
   export class SchoolGrc {

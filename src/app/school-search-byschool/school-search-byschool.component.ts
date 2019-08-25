@@ -21,37 +21,22 @@ export class SchoolSearchByschoolComponent implements OnInit {
     private schoolListService: SchoolListService,
     private location: Location) { }
 
-  private gridApi;
-  private gridColumnApi;
-
   ngOnInit() {
     this.getSchools();
   }
-
-  columnDefs = [
-    {headerName: 'School', field: 'school', resizable: true,sortable: true, filter: true},
-    {headerName: 'Year', field: 'year', resizable: true,sortable: true, filter: true },
-    {headerName: 'Phase', field: 'phase', resizable: true,sortable: true, filter: true},
-    {headerName: 'Availability', field: 'availability', resizable: true,sortable: true, filter: true},
-    {headerName: 'Registration', field: 'registration', resizable: true,sortable: true, filter: true},
-    {headerName: 'Subscription Rate', field: 'subrate', resizable: true,sortable: true, filter: true}
-  ];
-
-  rowData = [];
 
   getSchools(): void {
     const schoolname = this.route.snapshot.paramMap.get('name');
     this.schoolListService.getSchoolBySchool(schoolname)
       .subscribe(schools => {
-        this.rowData = schools.sort((n1: School, n2: School) => {
-          if(n1.year < n2.year) {
+        this.schools = schools.sort((n1: School, n2: School) => {
+          if(n1.year * 10 + n1.phase < n2.year * 10 + n2.phase) {
             return 1;
           } else {
             return -1;
           }
         });
-        this.rowData.forEach( e => {
-          e.phase = this.getPhase(e.phase);
+        this.schools.forEach( e => {
           if (e.availability) {
             e.subrate = Math.round(e.registration/e.availability*1000)/1000;
           } else {
@@ -70,19 +55,5 @@ export class SchoolSearchByschoolComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
-  }
-
-  autoSizeAll() {
-    var allColumnIds = [];
-    this.gridColumnApi.getAllColumns().forEach(function(column) {
-      allColumnIds.push(column.colId);
-    });
-    this.gridColumnApi.autoSizeColumns(allColumnIds);
-  }
-
-  onGridReady(params) {
-    this.gridApi = params.api;
-    this.gridColumnApi = params.columnApi;
-    this.autoSizeAll();
   }
 }

@@ -10,9 +10,18 @@
     <input class="form-control" type="text" placeholder="Search Registration Data by School" [(ngModel)]="searcht"> 
   </div>
 
-  <div class="col-md-4 themed-grid-col">
-    <a *ngFor="let school of schools | filter : searcht" routerLink="/byschool/{{school.school}}" >
-        <p>{{school.school}}</p>
-    </a>
+  <div class="col-md-6 themed-grid-col">
+    <div class="container-fluid">
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <tbody *ngFor="let school of schools | filter : searcht">
+              <tr>
+                <td routerLink="/byschool/{{school.school}}">{{school.school}}</td>
+                <td>{{school.grc}}</td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </main>

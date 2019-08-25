@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Phase } from '../dashboard/phase';
 import { PHASE_STATIC } from '../dashboard/phase-static';
-import { School } from '../school';
-import { SCHOOL_STATIC } from '../dashboard-school/school-static';
+import { School, SchoolGrc } from '../school';
 import { SchoolListService }  from '../school-service/school-list.service';
 
 @Component({
@@ -12,7 +11,7 @@ import { SchoolListService }  from '../school-service/school-list.service';
 })
 export class DashboardAnalysisComponent implements OnInit {
   phases: Phase[] = PHASE_STATIC;
-  schools: School[] = SCHOOL_STATIC;
+  schools: SchoolGrc[];
   selectedPhase: number;
   selectedSchoolValue: String;
   schoolData: School[];
@@ -36,6 +35,19 @@ export class DashboardAnalysisComponent implements OnInit {
   constructor(private schoolListService: SchoolListService) { }
 
   ngOnInit() {
+    this.getAllSchool();
+  }
+
+  getAllSchool(): void {
+    this.schoolListService.getAllSchoolWithGrc().subscribe(schools => {
+      this.schools = schools.sort((n1: SchoolGrc, n2: SchoolGrc) => {
+        if(n1.school > n2.school) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    })
   }
 
   getSchoolData(): void {

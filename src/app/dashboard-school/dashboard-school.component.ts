@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { School } from '../school';
-import { SCHOOL_STATIC } from './school-static';
+import { SchoolGrc } from '../school';
+import { SchoolListService }  from '../school-service/school-list.service';
 
 @Component({
   selector: 'app-dashboard-school',
@@ -10,13 +10,25 @@ import { SCHOOL_STATIC } from './school-static';
 })
 export class DashboardSchoolComponent implements OnInit {
 
-  schools: School[] = SCHOOL_STATIC;
+  schools: SchoolGrc[];
   searcht: string;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private schoolListService: SchoolListService) { }
 
   ngOnInit() {
+    this.getAllSchool();
   }
 
+  getAllSchool(): void {
+    this.schoolListService.getAllSchoolWithGrc().subscribe(schools => {
+      this.schools = schools.sort((n1: SchoolGrc, n2: SchoolGrc) => {
+        if(n1.school > n2.school) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    })
+  }
 
 }
