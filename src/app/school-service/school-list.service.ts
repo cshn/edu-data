@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { School, SchoolGrc } from '../school';
+import { School, SchoolGrc, SchoolBallot } from '../school';
 import { UraProperty } from '../model/property';
 import { UraTransaction } from '../model/ptransaction';
 import { Mk } from '../model/mk';
@@ -16,9 +16,9 @@ export class SchoolListService {
   private schoolsUrl = environment.url;  // URL to web api
   constructor(private http: HttpClient) { }
 
-  getAllSchoolBallot(): Observable<School[]> {
+  getAllSchoolBallot(): Observable<SchoolBallot[]> {
     const url = `${this.schoolsUrl}/allschoolballot`;
-    return this.http.get<School[]>(url);
+    return this.http.get<SchoolBallot[]>(url);
   }
   
   getAllSchool(): Observable<School[]> {

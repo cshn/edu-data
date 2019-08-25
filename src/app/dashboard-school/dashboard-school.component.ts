@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SchoolGrc } from '../school';
 import { SchoolListService }  from '../school-service/school-list.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard-school',
@@ -13,10 +14,14 @@ export class DashboardSchoolComponent implements OnInit {
   schools: SchoolGrc[];
   searcht: string;
 
-  constructor(private route: ActivatedRoute, private schoolListService: SchoolListService) { }
+  constructor(private route: ActivatedRoute, private schoolListService: SchoolListService, private location: Location) { }
 
   ngOnInit() {
     this.getAllSchool();
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
   getAllSchool(): void {

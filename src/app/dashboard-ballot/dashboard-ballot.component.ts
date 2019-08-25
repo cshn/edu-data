@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { SchoolListService }  from '../school-service/school-list.service';
 import { Phase } from '../dashboard/phase';
+import { SchoolBallot } from '../school';
 import { PHASE_STATIC } from '../dashboard/phase-static';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard-ballot',
@@ -9,55 +11,39 @@ import { PHASE_STATIC } from '../dashboard/phase-static';
   styleUrls: ['./dashboard-ballot.component.css']
 })
 export class DashboardBallotComponent implements OnInit {
+  schools: SchoolBallot[];
   phases: Phase[] = PHASE_STATIC;
-  phaseMap: any;
-  private gridApi;
-  private gridColumnApi;
-  constructor(private schoolListService: SchoolListService) { }
+
+  constructor(
+    private schoolListService: SchoolListService,
+    private location: Location
+  ) {}
 
   ngOnInit() {
     this.getAllSchoolBallot();
 
-    this.phaseMap = {};
-    for (var i = 0; this.phases.length > i; i += 1) {
-      this.phaseMap[this.phases[i].id] = this.phases[i].name;
-    }
-
   }
-
-  columnDefs = [
-    {headerName: 'Year', field: 'year', resizable: true, sortable: true, filter: true },
-    {headerName: 'Phase', field: 'phase', resizable: true, sortable: true, filter: true},
-    {headerName: 'School', field: 'school', resizable: true, sortable: true, filter: true},
-    {headerName: 'Ballot', field: 'ballot', resizable: true, sortable: true, filter: true},
-    {headerName: 'Description', field: 'ballotdesc', resizable: true, filter: true}
-  ];
-
-  rowData = [];
 
   getAllSchoolBallot(): void {
     this.schoolListService.getAllSchoolBallot().subscribe(schools => {
-      this.rowData = schools;
-      this.rowData.forEach(element => {
-        element.phase = this.phaseMap[element.phase];
+      this.schools = schools.sort((n1: SchoolBallot, n2: SchoolBallot) => {
+        if(n1.year * 10 + n1.phase < n2.year * 10 + n2.phase) {
+          return 1;
+        } else {
+          return -1;
+        }
       });
     })
   }
 
-  autoSizeAll() {
-    var allColumnIds = [];
-    this.gridColumnApi.getAllColumns().forEach(function(column) {
-      allColumnIds.push(column.colId);
+  goBack(): void {
+    this.location.back();
+  }
+
+  getPhase(phaseid: number): String {
+    var found = this.phases.find(function(element) {
+      return element.id === phaseid;
     });
-    this.gridColumnApi.autoSizeColumns(allColumnIds);
+    return found.name;
   }
-
-  onGridReady(params) {
-    this.gridApi = params.api;
-    this.gridColumnApi = params.columnApi;
-    
-    this.autoSizeAll();
-  }
-
-
 }
