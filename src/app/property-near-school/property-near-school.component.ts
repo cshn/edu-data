@@ -3,7 +3,7 @@ import { UraProperty } from '../model/property';
 import { SchoolListService }  from '../school-service/school-list.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { IHash,IStringHash } from '../model/ihash';
+import { IHash } from '../model/ihash';
 
 @Component({
   selector: 'app-property-near-school',

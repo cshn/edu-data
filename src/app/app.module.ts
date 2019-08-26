@@ -35,6 +35,7 @@ import { PropertyTransactionComponent } from './property-transaction/property-tr
 import { MoeKindergardenComponent } from './moe-kindergarden/moe-kindergarden.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
 import { PostAdsComponent } from './post-ads/post-ads.component';
+import { PropertyGrcComponent } from './property-grc/property-grc.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { PostAdsComponent } from './post-ads/post-ads.component';
     PropertyTransactionComponent,
     MoeKindergardenComponent,
     SitemapComponent,
-    PostAdsComponent
+    PostAdsComponent,
+    PropertyGrcComponent
   ],
   imports: [
     BrowserModule,

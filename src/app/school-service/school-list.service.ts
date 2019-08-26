@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { School, SchoolGrc, SchoolBallot } from '../school';
-import { UraProperty } from '../model/property';
+import { UraProperty, GrcProperty } from '../model/property';
 import { UraTransaction } from '../model/ptransaction';
 import { Mk } from '../model/mk';
 import { Posting } from '../model/posting';
-import {environment} from '../../environments/environment';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -41,8 +41,13 @@ export class SchoolListService {
     return this.http.get<UraProperty[]>(url);
   }
 
-  getNearbyPropertyBlk(school: String, project: String): Observable<UraProperty[]> {
+  getNearbyPropertyBySchool(school: String, project: String): Observable<UraProperty[]> {
     const url = `${this.schoolsUrl}/spd/${school}/${project}`;
+    return this.http.get<UraProperty[]>(url);
+  }
+
+  getNearbyPropertyBySchoolByBlk(school: String, project: String, blk: String): Observable<UraProperty[]> {
+    const url = `${this.schoolsUrl}/spd/${school}/${project}/${blk}`;
     return this.http.get<UraProperty[]>(url);
   }
 
@@ -97,6 +102,11 @@ export class SchoolListService {
     return this.http.get<SchoolGrc[]>(url);
   }
   
+  getPropertyByGrc(grc: String): Observable<GrcProperty[]> {
+    const url = `${this.schoolsUrl}/allcondo/grc/${grc}`;
+    return this.http.get<GrcProperty[]>(url);
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       // TODO: send the error to remote logging infrastructure

@@ -1,0 +1,43 @@
+
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+        <app-side-bar></app-side-bar>
+    </div>
+</nav>
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div class="container-fluid">
+        <div class="table-responsive">
+          <div class="button-bar">
+            Data is from <a href="https://www.onemap.sg/main/v2/">OneMap</a>:
+            <button class="gobackbutton" (click)="goBack()">go back</button>
+          </div>
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th>GRC</th>
+                <th>School</th>
+                <th>Project</th>
+                <th>Distance</th>
+                <th>Type</th>
+                <th>Road</th>
+                <th>Blk</th>
+                <th>Postal</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let p of grcProperties">
+              <tr>
+                <td>{{p.grc}}</td>
+                <td>{{school}}</td>
+                <td><a routerLink="/transaction/{{p.project}}">{{p.project}}</a></td>
+                <td>{{p.distance|number}}km</td>
+                <td>{{p.type}}</td>
+                <td>{{p.road}}</td>
+                <td>{{p.blk}}</td>
+                <td>{{p.postal}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>  
+      </div>
+  </main>

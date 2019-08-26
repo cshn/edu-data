@@ -15,6 +15,7 @@ import { SchoolSearchByschoolComponent } from './school-search-byschool/school-s
 import { PropertyNearSchoolComponent } from './property-near-school/property-near-school.component';
 import { MoeKindergardenComponent } from './moe-kindergarden/moe-kindergarden.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { PropertyGrcComponent } from './property-grc/property-grc.component';
 import { TermsComponent } from './terms/terms.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
 import { PostAdsComponent } from './post-ads/post-ads.component';
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: 'byschool/:name', component: SchoolSearchByschoolComponent },
   { path: 'transaction/:pname', component: PropertyTransactionComponent },
   { path: 'propertynearby/:school', component: PropertyNearSchoolComponent },
+  { path: 'propertygrc/:grc/:school', component: PropertyGrcComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'terms', component: TermsComponent },
   { path: 'callback', component: CallbackComponent},

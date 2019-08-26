@@ -20,3 +20,15 @@ export class UraProperty {
   postal: string;
   distance: number;
 }
+
+
+export class GrcProperty {
+  _id: string;
+  project: string;
+  type: string;
+  road: string;
+  blk: string;
+  postal: string;
+  grc: string;
+  distance: number;
+}
