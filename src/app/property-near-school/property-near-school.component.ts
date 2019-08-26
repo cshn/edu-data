@@ -3,7 +3,7 @@ import { UraProperty } from '../model/property';
 import { SchoolListService }  from '../school-service/school-list.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { IHash } from '../model/ihash';
+import { IHash, IStringHash } from '../model/ihash';
 
 @Component({
   selector: 'app-property-near-school',
@@ -15,6 +15,8 @@ export class PropertyNearSchoolComponent implements OnInit {
   filteredProperties: UraProperty[];
   projectSet = new Set();
   projectHash : IHash = {};
+  grc: string;
+  projectGrcHash: IStringHash = {};
 
   constructor(
     private route: ActivatedRoute,
@@ -27,6 +29,11 @@ export class PropertyNearSchoolComponent implements OnInit {
 
   getProperties(): void {
     const schoolname = this.route.snapshot.paramMap.get('school');
+
+    this.schoolListService.getGrcBySchool(schoolname).subscribe(schools => {
+      this.grc = schools[0].grc;
+    })
+
     this.schoolListService.getNearbyProperty(schoolname)
       .subscribe(properties => {
         properties.forEach(e => {

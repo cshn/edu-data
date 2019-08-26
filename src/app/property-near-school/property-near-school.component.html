@@ -16,6 +16,7 @@
             <thead>
               <tr>
                 <th>School</th>
+                <th>School in GRC</th>
                 <th>Project</th>
                 <th>Type</th>
                 <th>Blk</th>
@@ -27,6 +28,7 @@
             <tbody *ngFor="let p of filteredProperties">
               <tr>
                 <td>{{p.school}}</td>
+                <td>{{grc}}</td>
                 <td><a routerLink="/transaction/{{p.project}}">{{p.project}}</a></td>
                 <td>{{p.type}}</td>
                 <td>{{p.blk}}</td>

@@ -101,9 +101,19 @@ export class SchoolListService {
     const url = `${this.schoolsUrl}/allschool/grc`;
     return this.http.get<SchoolGrc[]>(url);
   }
+
+  getGrcBySchool(school: String): Observable<SchoolGrc[]> {
+    const url = `${this.schoolsUrl}/grcbyschool/${school}`;
+    return this.http.get<SchoolGrc[]>(url);
+  }
   
   getPropertyByGrc(grc: String): Observable<GrcProperty[]> {
     const url = `${this.schoolsUrl}/allcondo/grc/${grc}`;
+    return this.http.get<GrcProperty[]>(url);
+  }
+
+  getGrcByProperty(project: String): Observable<GrcProperty[]> {
+    const url = `${this.schoolsUrl}/grcbyproject/${project}`;
     return this.http.get<GrcProperty[]>(url);
   }
 

@@ -17,6 +17,7 @@ export class PropertyTransactionComponent implements OnInit {
   tranMaster: UraTransaction;
   transactionList: UraTranDetail[];
   postings: Posting[];
+  grc: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,6 +31,9 @@ export class PropertyTransactionComponent implements OnInit {
 
   getPostings(): void {
     const pname = this.route.snapshot.paramMap.get('pname');
+    this.schoolListService.getGrcByProperty(pname).subscribe(p => {
+      this.grc = p[0].grc;
+    })
     this.schoolListService.getPosting(pname)
       .subscribe(posting => {
         this.postings = posting.sort((n1: Posting, n2: Posting) => {
