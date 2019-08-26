@@ -29,12 +29,6 @@ export class PropertyGrcComponent implements OnInit {
       .subscribe(properties => {
         this.grcProperties = properties;
       })
-    this.grcProperties.forEach(e => {
-      this.schoolListService.getNearbyPropertyBySchoolByBlk(this.school, e.project, e.blk)
-        .subscribe(properties => {
-          e.distance = properties[0].distance;
-        })
-    })
   }
 
   goBack(): void {
