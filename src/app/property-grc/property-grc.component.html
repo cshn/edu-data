@@ -17,6 +17,7 @@
                 <th>GRC</th>
                 <th>School</th>
                 <th>Project</th>
+                <th (click)="orderByDistance()">Distance</th>
                 <th>Type</th>
                 <th>Road</th>
                 <th>Blk</th>
@@ -28,6 +29,7 @@
                 <td>{{p.grc}}</td>
                 <td>{{school}}</td>
                 <td><a routerLink="/transaction/{{p.project}}">{{p.project}}</a></td>
+                <td>{{projectHash[school+p.project+p.blk]}}</td>
                 <td>{{p.type}}</td>
                 <td>{{p.road}}</td>
                 <td>{{p.blk}}</td>

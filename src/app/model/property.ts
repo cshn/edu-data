@@ -30,5 +30,4 @@ export class GrcProperty {
   blk: string;
   postal: string;
   grc: string;
-  distance: number;
 }
