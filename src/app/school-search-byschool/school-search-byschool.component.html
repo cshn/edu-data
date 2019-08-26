@@ -16,9 +16,9 @@
                 <th>School</th>
                 <th>Year</th>
                 <th>Phase</th>
-                <th>Availability</th>
-                <th>Registration</th>
-                <th>Subscription Rate</th>
+                <th (click)="orderByAvailability()">Availability</th>
+                <th (click)="orderByRegistration()">Registration</th>
+                <th (click)="orderBySubRate()">Subscription Rate</th>
               </tr>
             </thead>
             <tbody *ngFor="let p of schools">

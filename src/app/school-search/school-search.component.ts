@@ -17,6 +17,9 @@ export class SchoolSearchComponent implements OnInit {
   searchtext: string;
   tag: string;
   phases: Phase[] = PHASE_STATIC;
+  availAsc: boolean;
+  registerAsc: boolean;
+  subRateAsc: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,6 +29,9 @@ export class SchoolSearchComponent implements OnInit {
 
   ngOnInit() {
     this.getSchools();
+    this.availAsc = false;
+    this.registerAsc = false;
+    this.subRateAsc = false;
   }
 
   getSchools(): void {
@@ -50,6 +56,69 @@ export class SchoolSearchComponent implements OnInit {
           }
         });
       });
+  }
+
+  orderBySubRate(): void {
+    if (this.subRateAsc) {
+      this.schools.sort((n1: School, n2: School) => {
+        if(n1.subrate < n2.subrate) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    } else {
+      this.schools.sort((n1: School, n2: School) => {
+        if(n1.subrate > n2.subrate) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    }
+    this.subRateAsc = !this.subRateAsc;
+  }
+
+  orderByAvailability(): void {
+    if(this.availAsc) {
+      this.schools.sort((n1: School, n2: School) => {
+        if(n1.availability < n2.availability) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    } else {
+      this.schools.sort((n1: School, n2: School) => {
+        if(n1.availability > n2.availability) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    }
+    this.availAsc = !this.availAsc;
+  }
+
+  orderByRegistration(): void {
+    if(this.registerAsc) {
+      this.schools.sort((n1: School, n2: School) => {
+        if(n1.registration < n2.registration) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    } else {
+      this.schools.sort((n1: School, n2: School) => {
+        if(n1.registration > n2.registration) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    }
+    this.registerAsc = !this.registerAsc;
   }
 
   goBack(): void {
