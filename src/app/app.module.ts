@@ -35,6 +35,7 @@ import { MoeKindergardenComponent } from './moe-kindergarden/moe-kindergarden.co
 import { SitemapComponent } from './sitemap/sitemap.component';
 import { PostAdsComponent } from './post-ads/post-ads.component';
 import { PropertyGrcComponent } from './property-grc/property-grc.component';
+import { SchoolRankComponent } from './school-rank/school-rank.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { PropertyGrcComponent } from './property-grc/property-grc.component';
     MoeKindergardenComponent,
     SitemapComponent,
     PostAdsComponent,
-    PropertyGrcComponent
+    PropertyGrcComponent,
+    SchoolRankComponent
   ],
   imports: [
     BrowserModule,

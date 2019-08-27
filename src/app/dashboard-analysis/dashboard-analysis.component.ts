@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Phase } from '../dashboard/phase';
 import { PHASE_STATIC } from '../dashboard/phase-static';
 import { School, SchoolGrc } from '../school';
@@ -9,7 +9,7 @@ import { SchoolListService }  from '../school-service/school-list.service';
   templateUrl: './dashboard-analysis.component.html',
   styleUrls: ['./dashboard-analysis.component.css']
 })
-export class DashboardAnalysisComponent implements OnInit {
+export class DashboardAnalysisComponent implements OnInit, AfterViewInit {
   phases: Phase[] = PHASE_STATIC;
   schools: SchoolGrc[];
   selectedPhase: number;
@@ -36,6 +36,12 @@ export class DashboardAnalysisComponent implements OnInit {
 
   ngOnInit() {
     this.getAllSchool();
+  }
+
+  ngAfterViewInit() {
+    this.selectedPhase = 5;
+    this.selectedSchoolValue = "Nanyang Primary School";
+    this.getSchoolData();
   }
 
   getAllSchool(): void {

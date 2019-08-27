@@ -21,3 +21,10 @@
     ballot: string;
     ballotdesc: string;
   }
+
+  export class SchoolRank {
+    school: string;
+    rank: number;
+    gep: boolean;
+    sap: boolean;
+  }
