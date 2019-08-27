@@ -61,3 +61,7 @@
     -o-user-select: none;
     user-select: none;
   }
+  .container {
+    font: tahoma;
+    background-color: #e3f2fd;
+  }

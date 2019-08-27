@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { SchoolSearchComponent } from './school-search/school-search.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardBallotComponent } from './dashboard-ballot/dashboard-ballot.component';
-import { DashboardGridComponent } from './dashboard-grid/dashboard-grid.component';
 import { DashboardSchoolComponent } from './dashboard-school/dashboard-school.component';
 import { DashboardAnalysisComponent } from './dashboard-analysis/dashboard-analysis.component';
 import { DashboardHighlightComponent } from './dashboard-highlight/dashboard-highlight.component';
@@ -27,7 +26,6 @@ const routes: Routes = [
   { path: 'postads', component: PostAdsComponent },
   { path: 'sitemap', component: SitemapComponent },
   { path: 'donation', component: DonationComponent },
-  { path: 'dashboardgrid', component: DashboardGridComponent },
   { path: 'dashboardschool', component: DashboardSchoolComponent },
   { path: 'dashboardballot', component: DashboardBallotComponent },
   { path: 'dashboardanalysis', component: DashboardAnalysisComponent },

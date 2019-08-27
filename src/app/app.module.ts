@@ -24,7 +24,6 @@ import { ChartsModule } from 'ng2-charts';
 import { DashboardHighlightComponent } from './dashboard-highlight/dashboard-highlight.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { SideBarComponent } from './side-bar/side-bar.component';
-import { DashboardGridComponent } from './dashboard-grid/dashboard-grid.component';
 import { DashboardBallotComponent } from './dashboard-ballot/dashboard-ballot.component';
 import { DonationComponent } from './donation/donation.component';
 import { FooterComponent } from './footer/footer.component';
@@ -51,7 +50,6 @@ import { PropertyGrcComponent } from './property-grc/property-grc.component';
     DashboardAnalysisComponent,
     DashboardHighlightComponent,
     SideBarComponent,
-    DashboardGridComponent,
     DashboardBallotComponent,
     DonationComponent,
     FooterComponent,
