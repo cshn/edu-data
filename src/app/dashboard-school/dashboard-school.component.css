@@ -56,3 +56,7 @@ table {
 -o-user-select: none;
 user-select: none;
 }
+input {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
