@@ -36,6 +36,7 @@ import { SitemapComponent } from './sitemap/sitemap.component';
 import { PostAdsComponent } from './post-ads/post-ads.component';
 import { PropertyGrcComponent } from './property-grc/property-grc.component';
 import { SchoolRankComponent } from './school-rank/school-rank.component';
+import { DashboardGepComponent } from './dashboard-gep/dashboard-gep.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { SchoolRankComponent } from './school-rank/school-rank.component';
     SitemapComponent,
     PostAdsComponent,
     PropertyGrcComponent,
-    SchoolRankComponent
+    SchoolRankComponent,
+    DashboardGepComponent
   ],
   imports: [
     BrowserModule,
