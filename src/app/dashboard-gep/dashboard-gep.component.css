@@ -1,0 +1,19 @@
+.jumbotron {
+    font-size: em;
+    font: tahoma;
+}
+
+h3 {
+    margin-bottom: 0;
+    font: tahoma;
+}
+
+button {
+    font-size: 0.8em;
+    margin: 2px;
+    font: tahoma;
+}
+
+div {
+    font: tahoma;
+}

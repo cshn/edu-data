@@ -2,6 +2,7 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SchoolSearchComponent } from './school-search/school-search.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardGepComponent } from './dashboard-gep/dashboard-gep.component';
 import { DashboardBallotComponent } from './dashboard-ballot/dashboard-ballot.component';
 import { DashboardSchoolComponent } from './dashboard-school/dashboard-school.component';
 import { DashboardAnalysisComponent } from './dashboard-analysis/dashboard-analysis.component';
@@ -21,8 +22,9 @@ import { PostAdsComponent } from './post-ads/post-ads.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/dashboardgep', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboardgep', component: DashboardGepComponent },
   { path: 'postads', component: PostAdsComponent },
   { path: 'sitemap', component: SitemapComponent },
   { path: 'donation', component: DonationComponent },
