@@ -1,6 +1,8 @@
 .jumbotron {
     font-size: em;
     font: tahoma;
+    background-color: #65316b;
+    color: white;
 }
 
 h3 {
