@@ -42,12 +42,17 @@ export class SchoolSearchComponent implements OnInit {
     this.schoolListService.getSchoolsByYearByPhase(year,id)
       .subscribe(schools => {
         schools.forEach( e => {
-          if (e.availability > 0) {
-            e.subrate = Math.round(e.registration/e.availability*1000)/1000;
+          if (e.registration > 0) {
+            if (e.availability < e.registration) {
+              e.subrate = Math.round(e.availability/e.registration*1000)/1000;
+            } else {
+              e.subrate = 1;
+            }
           } else {
             e.subrate = 0;
           }
         })
+
         this.schools = schools.sort((n1: School, n2: School) => {
           if(n1.subrate < n2.subrate) {
             return 1;

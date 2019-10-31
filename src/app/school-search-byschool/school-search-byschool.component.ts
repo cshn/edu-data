@@ -43,8 +43,12 @@ export class SchoolSearchByschoolComponent implements OnInit {
           }
         });
         this.schools.forEach( e => {
-          if (e.availability) {
-            e.subrate = Math.round(e.registration/e.availability*1000)/1000;
+          if (e.registration > 0) {
+            if (e.availability < e.registration) {
+              e.subrate = Math.round(e.availability/e.registration*1000)/1000;
+            } else {
+              e.subrate = 1;
+            }
           } else {
             e.subrate = 0;
           }
