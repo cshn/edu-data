@@ -18,6 +18,8 @@ export class SchoolSearchByschoolComponent implements OnInit {
   availAsc: boolean;
   registerAsc: boolean;
   subRateAsc: boolean;
+  selectedPhase: number;
+  currentSchoolName: String;
 
   constructor(
     private route: ActivatedRoute,
@@ -31,8 +33,38 @@ export class SchoolSearchByschoolComponent implements OnInit {
     this.subRateAsc = false;
   }
 
+  ngAfterViewInit() {
+    this.selectedPhase = 5;
+    this.getSchoolDataByPhase();
+  }
+
+  getSchoolDataByPhase(): void {
+    this.schoolListService.getSchoolByPhase(this.selectedPhase, this.currentSchoolName)
+      .subscribe(schools => {
+        this.schools = schools.sort((n1: School, n2: School) => {
+          if(n1.year > n2.year) {
+            return 1;
+          } else {
+            return -1;
+          }
+        });
+        this.schools.forEach( e => {
+          if (e.registration > 0) {
+            if (e.availability < e.registration) {
+              e.subrate = Math.round(e.availability/e.registration*1000)/1000;
+            } else {
+              e.subrate = 1;
+            }
+          } else {
+            e.subrate = 0;
+          }
+        })
+      });
+  }
+
   getSchools(): void {
     const schoolname = this.route.snapshot.paramMap.get('name');
+    this.currentSchoolName = schoolname;
     this.schoolListService.getSchoolBySchool(schoolname)
       .subscribe(schools => {
         this.schools = schools.sort((n1: School, n2: School) => {

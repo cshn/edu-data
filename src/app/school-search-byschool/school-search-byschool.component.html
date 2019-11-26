@@ -1,16 +1,15 @@
-<!-- <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-  <div class="sidebar-sticky">
-      <app-side-bar></app-side-bar>
-  </div>
-</nav> -->
 
-<!-- <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"> -->
     <div class="container">
+        <mat-form-field>
+            <mat-label>Select School Phase</mat-label>
+            <mat-select [(ngModel)]="selectedPhase" name="phase" (selectionChange)="getSchoolDataByPhase()">
+              <mat-option *ngFor="let phase of phases" [value]="phase.id">
+                {{phase.name}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+
         <div class="table-responsive">
-          <!-- <div class="button-bar">
-            <button class="gobackbutton" (click)="goBack()">go back</button>
-          </div> -->
-          <input class="form-control" type="text" placeholder="Search Registration Data by School" [(ngModel)]="searchp">
           <table class="table table-striped table-sm">
             <thead>
               <tr>
@@ -34,5 +33,4 @@
             </tbody>
           </table>
         </div>  
-      </div>
-  <!-- </main> -->
+    </div>
