@@ -21,7 +21,6 @@ import {MatCheckboxModule} from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { ChartsModule } from 'ng2-charts';
-import { DashboardHighlightComponent } from './dashboard-highlight/dashboard-highlight.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { DashboardBallotComponent } from './dashboard-ballot/dashboard-ballot.component';
@@ -50,7 +49,6 @@ import { DashboardGepComponent } from './dashboard-gep/dashboard-gep.component';
     DashboardSchoolComponent,
     SchoolSearchByschoolComponent,
     DashboardAnalysisComponent,
-    DashboardHighlightComponent,
     SideBarComponent,
     DashboardBallotComponent,
     DonationComponent,

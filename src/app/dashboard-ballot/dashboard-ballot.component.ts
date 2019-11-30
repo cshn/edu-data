@@ -13,6 +13,7 @@ import { Location } from '@angular/common';
 export class DashboardBallotComponent implements OnInit {
   schools: SchoolBallot[];
   phases: Phase[] = PHASE_STATIC;
+  searcht: string;
 
   constructor(
     private schoolListService: SchoolListService,

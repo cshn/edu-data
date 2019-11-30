@@ -1,12 +1,7 @@
-<!-- <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-    <div class="sidebar-sticky">
-        <app-side-bar></app-side-bar>
-    </div>
-</nav> -->
 
-<!-- <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"> -->
     <div class="container">
         <div class="table-responsive">
+          <input class="form-control" type="text" placeholder="Search Data by School" [(ngModel)]="searcht">
           <table class="table table-striped table-sm">
             <thead>
               <tr>
@@ -17,7 +12,7 @@
                 <th>Desc</th>
               </tr>
             </thead>
-            <tbody *ngFor="let p of schools">
+            <tbody *ngFor="let p of schools | filter : searcht">
               <tr>
                 <td><a routerLink="/propertynearby/{{p.school}}">{{p.school}}</a></td>
                 <td>{{p.year}}</td>
