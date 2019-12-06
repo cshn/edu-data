@@ -18,6 +18,7 @@ export class SchoolSearchByschoolComponent implements OnInit {
   availAsc: boolean;
   registerAsc: boolean;
   subRateAsc: boolean;
+  yearAsc: boolean;
   selectedPhase: number;
   currentSchoolName: String;
 
@@ -31,6 +32,7 @@ export class SchoolSearchByschoolComponent implements OnInit {
     this.availAsc = false;
     this.registerAsc = false;
     this.subRateAsc = false;
+    this.yearAsc = true;
   }
 
   ngAfterViewInit() {
@@ -160,5 +162,26 @@ export class SchoolSearchByschoolComponent implements OnInit {
       });
     }
     this.registerAsc = !this.registerAsc;
+  }
+
+  orderByYear(): void {
+    if(this.yearAsc) {
+      this.schools.sort((n1: School, n2: School) => {
+        if(n1.year < n2.year) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    } else {
+      this.schools.sort((n1: School, n2: School) => {
+        if(n1.year > n2.year) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    }
+    this.yearAsc = !this.yearAsc;
   }
 }
