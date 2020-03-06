@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'dashboardgep', component: DashboardGepComponent },
   { path: 'postads', component: PostAdsComponent },
   { path: 'sitemap', component: SitemapComponent },
-  { path: 'FAQ', component: DonationComponent },
+  { path: 'donation', component: DonationComponent },
   { path: 'dashboardschool', component: DashboardSchoolComponent },
   { path: 'dashboardballot', component: DashboardBallotComponent },
   { path: 'dashboardanalysis', component: DashboardAnalysisComponent },
