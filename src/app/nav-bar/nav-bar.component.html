@@ -1,33 +1,11 @@
-
-      <nav class="container navbar navbar-expand-lg navbar-light">
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" >
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" routerLink="/dashboardgep">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item dropdown active">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Registration
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" routerLink="/dashboard">By Year</a>
-                <a class="dropdown-item" routerLink="/dashboardschool">By School</a>
-                <a class="dropdown-item" routerLink="/dashboardballot">Balloting History</a>
-              </div>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" routerLink="/dashboardanalysis">School Analysis</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" routerLink="/moekindergarden">MOE Kindergarden</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" routerLink="/donation">FAQ</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal"><a class="p-2 text-dark" routerLink="/dashboardgep">Home <span class="sr-only">(current)</span></a></h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" routerLink="/dashboard">By Year</a>
+    <a class="p-2 text-dark" routerLink="/dashboardschool">By School</a>
+    <a class="p-2 text-dark" routerLink="/dashboardballot">Balloting History</a>
+    <a class="p-2 text-dark" routerLink="/dashboardanalysis">School Analysis</a>
+    <a class="p-2 text-dark" routerLink="/moekindergarden">MOE Kindergarden</a>
+    <a class="p-2 text-dark" routerLink="/donation">FAQ</a>
+  </nav>
+</div>
