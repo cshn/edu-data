@@ -45,6 +45,6 @@ export class DashboardBallotComponent implements OnInit {
     var found = this.phases.find(function(element) {
       return element.id === phaseid;
     });
-    return found.name;
+    return found.name.slice(6);
   }
 }

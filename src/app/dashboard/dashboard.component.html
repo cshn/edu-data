@@ -1,13 +1,14 @@
-
-<!-- <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-    <div class="sidebar-sticky">
-        <app-side-bar></app-side-bar>
-    </div>
-</nav> -->
-
-<!-- <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"> -->
 <div class="container">
-  <div class=" col-md-2">
+  <!-- <div class="col-md-2">
+      <h5 class="moduletitle">2020</h5>
+      <a *ngFor="let phase of phases" routerLink="/schools/2020/{{phase.id}}">
+        <div class="module">
+          <h6>{{phase.name}}</h6>
+        </div>
+      </a>
+  </div> -->
+
+  <div class="col-md-2">
     <h5 class="moduletitle">2019</h5>
     <a *ngFor="let phase of phases" routerLink="/schools/2019/{{phase.id}}">
       <div class="module">
@@ -16,7 +17,7 @@
     </a>
   </div>
 
-  <div class=" col-md-2">
+  <div class="col-md-2">
     <h5 class="moduletitle">2018</h5>
     <a *ngFor="let phase of phases" routerLink="/schools/2018/{{phase.id}}">
       <div class="module">
@@ -25,7 +26,7 @@
     </a>
   </div>
 
-  <div class=" col-md-2">
+  <div class="col-md-2">
       <h5 class="moduletitle">2017</h5>
       <a *ngFor="let phase of phases" routerLink="/schools/2017/{{phase.id}}">
         <div class="module">
@@ -34,7 +35,7 @@
       </a>
   </div>
 
-  <div class=" col-md-2">
+  <div class="col-md-2">
       <h5 class="moduletitle">2016</h5>
       <a *ngFor="let phase of phases" routerLink="/schools/2016/{{phase.id}}">
         <div class="module">
@@ -43,7 +44,7 @@
       </a>
   </div>
 
-  <div class=" col-md-2">
+  <div class="col-md-2">
       <h5 class="moduletitle">2015</h5>
       <a *ngFor="let phase of phases" routerLink="/schools/2015/{{phase.id}}">
         <div class="module">
@@ -52,7 +53,7 @@
       </a>
   </div>
 
-  <div class=" col-md-2">
+  <div class="col-md-2">
       <h5 class="moduletitle">2014</h5>
       <a *ngFor="let phase of phases" routerLink="/schools/2014/{{phase.id}}">
         <div class="module">
@@ -61,7 +62,7 @@
       </a>
   </div>
 
-  <div class=" col-md-2">
+  <div class="col-md-2">
       <h5 class="moduletitle">2013</h5>
       <a *ngFor="let phase of phases" routerLink="/schools/2013/{{phase.id}}">
         <div class="module">
@@ -70,7 +71,7 @@
       </a>
   </div>
 
-  <div class=" col-md-2">
+  <div class="col-md-2">
       <h5 class="moduletitle">2012</h5>
       <a *ngFor="let phase of phases" routerLink="/schools/2012/{{phase.id}}">
         <div class="module">
@@ -79,7 +80,7 @@
       </a>
   </div>
 
-  <div class=" col-md-2">
+  <div class="col-md-2">
       <h5 class="moduletitle">2011</h5>
       <a *ngFor="let phase of phases" routerLink="/schools/2011/{{phase.id}}">
         <div class="module">
@@ -88,7 +89,7 @@
       </a>
   </div>
 
-  <div class=" col-md-2">
+  <div class="col-md-2">
       <h5 class="moduletitle">2010</h5>
       <a *ngFor="let phase of phases" routerLink="/schools/2010/{{phase.id}}">
         <div class="module">
@@ -97,7 +98,7 @@
       </a>
   </div>
 
-  <div class=" col-md-2">
+  <div class="col-md-2">
       <h5 class="moduletitle">2009</h5>
       <a *ngFor="let phase of phases" routerLink="/schools/2010/{{phase.id}}">
         <div class="module">
@@ -106,26 +107,46 @@
       </a>
   </div>
 
-  <div class="col p-4 d-flex flex-column position-static">
-      <strong class="text-primary">Phase 1</strong>
-      <p class="card-text">You have another child currently studying at your preferred school.</p>
-      <strong class="text-primary">Phase 2A(1)</strong>
-      <p class="card-text mb-auto">You are a former student of your preferred school, and have signed up as a member of the alumni association before 1 July 2018.</p>
-      <p class="card-text">You are a member of the Advisory or Management Committee of your preferred school.</p>
-      <strong class="text-primary">Phase 2A(2)</strong>
-      <p class="card-text mb-auto">You or another child of yours have previously studied in your preferred school.</p>
-      <p class="card-text mb-auto">You are a staff member of the school.</p>
-      <p class="card-text">Your child is currently in the MOE Kindergarten located within your preferred school.</p>
-      <strong class="text-primary">Phase 2B</strong>
-      <p class="card-text mb-auto">You are a parent volunteer at the school, starting before 1 July 2018 and completing at least 40 hours of service by 30 June 2019.</p>
-      <p class="card-text mb-auto">You are a member endorsed by the church or clan directly connected to the school.</p>
-      <p class="card-text">You are endorsed as an active community leader.</p>
-      <strong class="text-primary">Phase 2C</strong>
-      <p class="card-text mb-auto">Singapore Citizen and PR</p>
-      <strong class="text-primary">Phase 2CS</strong>
-      <p class="card-text mb-auto">Singapore Citizen and PR</p>
-      <strong class="text-primary">Phase 3</strong>
-      <p class="card-text mb-auto">All Foreigners</p>
-  </div>
+  <table class="table table-striped table-sm">
+      <thead>
+          <tr>
+            <th>Phase</th>
+            <th>Description</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td>1</td>
+            <td>You have another child currently studying at your preferred school.</td>
+          </tr>
+          <tr>
+            <td>2A(1)</td>
+            <td>You are a former student of your preferred school, and have signed up as a member of the alumni association before 1 July 2019. You are a member of the Advisory or Management Committee of your preferred school.
+            </td>
+          </tr>
+          <tr>
+            <td>2A(2)</td>
+            <td>You or another child of yours have previously studied in your preferred school. You are a staff member of the school. Your child is currently in the MOE Kindergarten located within your preferred school.
+            </td>
+          </tr>
+          <tr>
+            <td>2B</td>
+            <td>You are a parent volunteer at the school, starting before 1 July 2019 and completing at least 40 hours of service by 30 June 2020. You are a member endorsed by the church or clan directly connected to the school. You are endorsed as an active community leader.
+            </td>
+          </tr>
+          <tr>
+            <td>2C</td>
+            <td>Singapore Citizen and PR</td>
+          </tr>
+          <tr>
+            <td>2CS</td>
+            <td>Singapore Citizen and PR</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Foreigner</td>
+          </tr>
+      </tbody>
+  </table>
 
 </div>
