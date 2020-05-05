@@ -20,6 +20,8 @@
     max-height: 120px;
     min-width: 60px;
     border-radius: 2px;
+    background-color: #2b8b9c;
+    color: white;
   }
   h6 {
     padding: 8px 0;
