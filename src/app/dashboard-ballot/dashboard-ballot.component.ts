@@ -15,14 +15,17 @@ export class DashboardBallotComponent implements OnInit {
   phases: Phase[] = PHASE_STATIC;
   searcht: string;
 
+  selectedYear: number;
+  years: number[] = [2019,2018,2017,2016,2015];
+
   constructor(
     private schoolListService: SchoolListService,
     private location: Location
   ) {}
 
   ngOnInit() {
+    this.selectedYear = 2019;
     this.getAllSchoolBallot();
-
   }
 
   getAllSchoolBallot(): void {
@@ -46,5 +49,9 @@ export class DashboardBallotComponent implements OnInit {
       return element.id === phaseid;
     });
     return found.name.slice(6);
+  }
+
+  getDataByYear(): void {
+    
   }
 }
