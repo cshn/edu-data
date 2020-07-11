@@ -20,6 +20,11 @@ export class SchoolListService {
     const url = `${this.schoolsUrl}/allschoolballot`;
     return this.http.get<SchoolBallot[]>(url);
   }
+
+  getAllSchoolBallotByYear(year: number): Observable<SchoolBallot[]> {
+    const url = `${this.schoolsUrl}/allschoolballot/${year}`;
+    return this.http.get<SchoolBallot[]>(url);
+  }
   
   getAllSchool(): Observable<School[]> {
     const url = `${this.schoolsUrl}/allschool`;

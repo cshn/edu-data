@@ -16,7 +16,7 @@ export class DashboardBallotComponent implements OnInit {
   searcht: string;
 
   selectedYear: number;
-  years: number[] = [2019,2018,2017,2016,2015];
+  years: number[] = [2019];
 
   constructor(
     private schoolListService: SchoolListService,
@@ -29,7 +29,7 @@ export class DashboardBallotComponent implements OnInit {
   }
 
   getAllSchoolBallot(): void {
-    this.schoolListService.getAllSchoolBallot().subscribe(schools => {
+    this.schoolListService.getAllSchoolBallotByYear(2019).subscribe(schools => {
       this.schools = schools.sort((n1: SchoolBallot, n2: SchoolBallot) => {
         if(n1.year * 10 + n1.phase < n2.year * 10 + n2.phase) {
           return 1;
