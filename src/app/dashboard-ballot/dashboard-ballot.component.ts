@@ -16,7 +16,7 @@ export class DashboardBallotComponent implements OnInit {
   searcht: string;
 
   selectedYear: number;
-  years: number[] = [2019];
+  years: number[] = [2019, 2020];
 
   constructor(
     private schoolListService: SchoolListService,
@@ -25,19 +25,7 @@ export class DashboardBallotComponent implements OnInit {
 
   ngOnInit() {
     this.selectedYear = 2019;
-    this.getAllSchoolBallot();
-  }
-
-  getAllSchoolBallot(): void {
-    this.schoolListService.getAllSchoolBallotByYear(2019).subscribe(schools => {
-      this.schools = schools.sort((n1: SchoolBallot, n2: SchoolBallot) => {
-        if(n1.year * 10 + n1.phase < n2.year * 10 + n2.phase) {
-          return 1;
-        } else {
-          return -1;
-        }
-      });
-    })
+    this.getDataByYear();
   }
 
   goBack(): void {
@@ -52,6 +40,14 @@ export class DashboardBallotComponent implements OnInit {
   }
 
   getDataByYear(): void {
-    
+    this.schoolListService.getAllSchoolBallotByYear(this.selectedYear).subscribe(schools => {
+      this.schools = schools.sort((n1: SchoolBallot, n2: SchoolBallot) => {
+        if(n1.year * 10 + n1.phase < n2.year * 10 + n2.phase) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    })
   }
 }
