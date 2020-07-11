@@ -24,7 +24,7 @@ export class DashboardBallotComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.selectedYear = 2019;
+    this.selectedYear = this.years[this.years.length - 1];
     this.getDataByYear();
   }
 
