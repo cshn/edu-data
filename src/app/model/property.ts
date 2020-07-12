@@ -16,8 +16,6 @@ export class UraProperty {
   project: string;
   type: string;
   road: string;
-  blk: string;
-  postal: string;
   distance: number;
 }
 
