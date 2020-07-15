@@ -35,11 +35,6 @@ export class SchoolSearchByschoolComponent implements OnInit {
     this.yearAsc = true;
   }
 
-  ngAfterViewInit() {
-    this.selectedPhase = 5;
-    this.getSchoolDataByPhase();
-  }
-
   getSchoolDataByPhase(): void {
     this.schoolListService.getSchoolByPhase(this.selectedPhase, this.currentSchoolName)
       .subscribe(schools => {
@@ -50,17 +45,6 @@ export class SchoolSearchByschoolComponent implements OnInit {
             return -1;
           }
         });
-        this.schools.forEach( e => {
-          if (e.registration > 0) {
-            if (e.availability < e.registration) {
-              e.subrate = Math.round(e.availability/e.registration*1000)/1000;
-            } else {
-              e.subrate = 1;
-            }
-          } else {
-            e.subrate = 0;
-          }
-        })
       });
   }
 
