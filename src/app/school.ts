@@ -6,6 +6,7 @@
     registration: number;
     size: number;
     subrate: number;
+    left: number;
   }
 
   export class SchoolGrc {

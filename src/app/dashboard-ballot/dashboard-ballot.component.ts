@@ -16,7 +16,7 @@ export class DashboardBallotComponent implements OnInit {
   searcht: string;
 
   selectedYear: number;
-  years: number[] = [2019, 2020];
+  years: number[] = [2016, 2017, 2018, 2019, 2020];
 
   constructor(
     private schoolListService: SchoolListService,

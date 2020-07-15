@@ -3,7 +3,6 @@ import { UraProperty } from '../model/property';
 import { SchoolListService }  from '../school-service/school-list.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { IHash, IStringHash } from '../model/ihash';
 
 @Component({
   selector: 'app-property-near-school',
@@ -13,10 +12,7 @@ import { IHash, IStringHash } from '../model/ihash';
 export class PropertyNearSchoolComponent implements OnInit {
 
   filteredProperties: UraProperty[];
-  projectSet = new Set();
-  projectHash : IHash = {};
   grc: string;
-  projectGrcHash: IStringHash = {};
 
   constructor(
     private route: ActivatedRoute,
@@ -36,21 +32,8 @@ export class PropertyNearSchoolComponent implements OnInit {
 
     this.schoolListService.getNearbyProperty(schoolname)
       .subscribe(properties => {
-        properties.forEach(e => {
-          this.projectSet.add(e.project);
-          if (this.projectHash[e.project] == undefined) {
-            this.projectHash[e.project] = e.distance;
-          }
-        })
-
         this.filteredProperties = properties.sort((n1: UraProperty, n2: UraProperty) => {
-          if(n1.distance < n2.distance) {
-            return 1;
-          } else {
-            return -1;
-          }
-        }).sort((n1: UraProperty, n2: UraProperty) => {
-          if(this.projectHash[n1.project] > this.projectHash[n2.project]) {
+          if(n1.distance > n2.distance) {
             return 1;
           } else {
             return -1;

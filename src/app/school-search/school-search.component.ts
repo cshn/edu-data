@@ -20,6 +20,7 @@ export class SchoolSearchComponent implements OnInit {
   availAsc: boolean;
   registerAsc: boolean;
   subRateAsc: boolean;
+  leftAsc: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,6 +33,7 @@ export class SchoolSearchComponent implements OnInit {
     this.availAsc = false;
     this.registerAsc = false;
     this.subRateAsc = false;
+    this.leftAsc = false;
   }
 
   getSchools(): void {
@@ -45,11 +47,14 @@ export class SchoolSearchComponent implements OnInit {
           if (e.registration > 0) {
             if (e.availability < e.registration) {
               e.subrate = Math.round(e.availability/e.registration*1000)/1000;
+              e.left = 0;
             } else {
               e.subrate = 1;
+              e.left = e.availability - e.registration;
             }
           } else {
             e.subrate = 0;
+            e.left = e.availability;
           }
         })
 
@@ -124,6 +129,27 @@ export class SchoolSearchComponent implements OnInit {
       });
     }
     this.registerAsc = !this.registerAsc;
+  }
+
+  orderByLeft(): void {
+    if(this.leftAsc) {
+      this.schools.sort((n1: School, n2: School) => {
+        if(n1.left < n2.left) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    } else {
+      this.schools.sort((n1: School, n2: School) => {
+        if(n1.left > n2.left) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    }
+    this.leftAsc = !this.leftAsc;
   }
 
   goBack(): void {
