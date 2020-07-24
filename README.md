@@ -29,9 +29,3 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Publish code 1
 ng build --prod --base-href "/"
 ngh --branch=master --cname=snowballdata.com
-
-## Publish code 2
-ng build --prod --base-href "https://snowballdata.com/"
-npm i angular-cli-ghpages --save-dev
-npx ngh --dir=dist/Azure-AI-Image-Text-Reader
-

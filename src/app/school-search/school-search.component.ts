@@ -53,7 +53,7 @@ export class SchoolSearchComponent implements OnInit {
               e.left = e.availability - e.registration;
             }
           } else {
-            e.subrate = 0;
+            e.subrate = 1;
             e.left = e.availability;
           }
         })
