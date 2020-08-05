@@ -19,6 +19,7 @@ export class SchoolSearchByschoolComponent implements OnInit {
   registerAsc: boolean;
   subRateAsc: boolean;
   yearAsc: boolean;
+  maxprAsc: boolean;
   selectedPhase: number;
   currentSchoolName: String;
 
@@ -33,6 +34,7 @@ export class SchoolSearchByschoolComponent implements OnInit {
     this.registerAsc = false;
     this.subRateAsc = false;
     this.yearAsc = true;
+    this.maxprAsc = false;
   }
 
   getSchoolDataByPhase(): void {
@@ -178,5 +180,26 @@ export class SchoolSearchByschoolComponent implements OnInit {
       });
     }
     this.yearAsc = !this.yearAsc;
+  }
+
+  orderByMaxPrAvai(): void {
+    if(this.maxprAsc) {
+      this.schools.sort((n1: School, n2: School) => {
+        if(n1.maxprnum < n2.maxprnum) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    } else {
+      this.schools.sort((n1: School, n2: School) => {
+        if(n1.maxprnum > n2.maxprnum) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    }
+    this.maxprAsc = !this.maxprAsc;
   }
 }

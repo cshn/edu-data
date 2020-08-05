@@ -6,10 +6,11 @@
                 <th>School</th>
                 <th>Year</th>
                 <th>Phase</th>
-                <th (click)="orderByAvailability()">Availability</th>
+                <th (click)="orderByAvailability()">Vacancy</th>
                 <th (click)="orderByRegistration()">Registration</th>
                 <th (click)="orderByLeft()">Left</th>
                 <th (click)="orderBySubRate()">Success Rate</th>
+                <th (click)="orderByMaxPrAvai()">Max PR Vacancy</th>
               </tr>
             </thead>
             <tbody *ngFor="let p of schools">
@@ -21,6 +22,7 @@
                 <td>{{p.registration}} </td>
                 <td>{{p.left}}</td>
                 <td>{{p.subrate | percent}}</td>
+                <td>{{p.maxprnum}}</td>
               </tr>
             </tbody>
           </table>

@@ -5,6 +5,7 @@
     availability: number;
     registration: number;
     size: number;
+    maxprnum: number;
     subrate: number;
     left: number;
   }

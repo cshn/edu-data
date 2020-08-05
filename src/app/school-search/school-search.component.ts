@@ -21,6 +21,7 @@ export class SchoolSearchComponent implements OnInit {
   registerAsc: boolean;
   subRateAsc: boolean;
   leftAsc: boolean;
+  maxprAsc: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -34,6 +35,7 @@ export class SchoolSearchComponent implements OnInit {
     this.registerAsc = false;
     this.subRateAsc = false;
     this.leftAsc = false;
+    this.maxprAsc = false;
   }
 
   getSchools(): void {
@@ -150,6 +152,27 @@ export class SchoolSearchComponent implements OnInit {
       });
     }
     this.leftAsc = !this.leftAsc;
+  }
+
+  orderByMaxPrAvai(): void {
+    if(this.maxprAsc) {
+      this.schools.sort((n1: School, n2: School) => {
+        if(n1.maxprnum < n2.maxprnum) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    } else {
+      this.schools.sort((n1: School, n2: School) => {
+        if(n1.maxprnum > n2.maxprnum) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+    }
+    this.maxprAsc = !this.maxprAsc;
   }
 
   goBack(): void {

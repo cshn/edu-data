@@ -16,8 +16,9 @@
                 <th>School</th>
                 <th (click)="orderByYear()">Year</th>
                 <th>Phase</th>
-                <th (click)="orderByAvailability()">Availability</th>
+                <th (click)="orderByAvailability()">Vacancy</th>
                 <th (click)="orderByRegistration()">Registration</th>
+                <th (click)="orderByMaxPrAvai()">Max PR Vacancy</th>
                 <th (click)="orderBySubRate()">Success Rate</th>
               </tr>
             </thead>
@@ -28,6 +29,7 @@
                 <td>{{getPhase(p.phase)}}</td>
                 <td>{{p.availability}}</td>
                 <td>{{p.registration}} </td>
+                <td>{{p.maxprnum}}</td>
                 <td>{{p.subrate | percent}}</td>
               </tr>
             </tbody>
