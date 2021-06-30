@@ -17,6 +17,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { PropertyGrcComponent } from './property-grc/property-grc.component';
 import { TermsComponent } from './terms/terms.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
+import { EduBlogComponent } from './edu-blog/edu-blog.component';
 import { PostAdsComponent } from './post-ads/post-ads.component';
 import { AuthGuard } from './auth.guard';
 
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'propertygrc/:grc/:school', component: PropertyGrcComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'terms', component: TermsComponent },
+  { path: 'blog', component: EduBlogComponent },
   { path: 'callback', component: CallbackComponent},
   {
     path: 'profile',
