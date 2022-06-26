@@ -39,7 +39,7 @@ export class DashboardAnalysisComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.selectedPhase = 5;
+    this.selectedPhase = 4;
     this.selectedSchoolValue = "Nanyang Primary School";
     this.getSchoolData();
   }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SchoolListService }  from '../school-service/school-list.service';
 import { Phase } from '../dashboard/phase';
 import { SchoolBallot } from '../school';
-import { PHASE_STATIC } from '../dashboard/phase-static';
+import { PHASE_STATIC_BEFORE_2022 } from '../dashboard/phase-static-before-2022';
 import { Location } from '@angular/common';
 
 @Component({
@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
 })
 export class DashboardBallotComponent implements OnInit {
   schools: SchoolBallot[];
-  phases: Phase[] = PHASE_STATIC;
+  phases: Phase[] = PHASE_STATIC_BEFORE_2022;
   searcht: string;
 
   selectedYear: number;
