@@ -1,4 +1,12 @@
 <div class="container">
+    <div class="col-md-2">
+        <h5 class="moduletitle">2022</h5>
+        <a *ngFor="let phase of phases" routerLink="/schools/2022/{{phase.id}}">
+            <div class="module">
+              <h6>{{phase.name}}</h6>
+            </div>
+        </a>
+    </div>
   <div class="col-md-2">
       <h5 class="moduletitle">2021</h5>
       <a *ngFor="let phase of phases" routerLink="/schools/2021/{{phase.id}}">
