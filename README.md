@@ -29,3 +29,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Publish code 1
 ng build --prod --base-href "/"
 ngh --branch=master --cname=snowballdata.com
+
+test
