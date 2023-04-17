@@ -3,6 +3,7 @@ import { SchoolListService }  from '../school-service/school-list.service';
 import { Phase } from '../dashboard/phase';
 import { SchoolBallot } from '../school';
 import { PHASE_STATIC_BEFORE_2022 } from '../dashboard/phase-static-before-2022';
+import { PHASE_STATIC } from '../dashboard/phase-static';
 import { Location } from '@angular/common';
 
 @Component({
@@ -40,6 +41,11 @@ export class DashboardBallotComponent implements OnInit {
   }
 
   getDataByYear(): void {
+    if (this.selectedYear > 2021) {
+      this.phases = PHASE_STATIC;
+    } else {
+      this.phases = PHASE_STATIC_BEFORE_2022;
+    }
     this.schoolListService.getAllSchoolBallotByYear(this.selectedYear).subscribe(schools => {
       this.schools = schools.sort((n1: SchoolBallot, n2: SchoolBallot) => {
         if(n1.year * 10 + n1.phase < n2.year * 10 + n2.phase) {
