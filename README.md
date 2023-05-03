@@ -28,6 +28,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Publish code 1
 ng build --prod --base-href "/"
-ngh --branch=master --cname=snowballdata.com
+ngh --no-silent --branch=master --cname=snowballdata.com
 
-test
+Use personal access token instead of password to publish page

@@ -24,7 +24,7 @@
             </thead>
             <tbody *ngFor="let p of schools">
               <tr>
-                <td><a routerLink="/propertynearby/{{p.school}}">{{p.school}}</a></td>
+                <td>{{p.school}}</td>
                 <td>{{p.year}}</td>
                 <td>{{getPhase(p.phase)}}</td>
                 <td>{{p.availability}}</td>
