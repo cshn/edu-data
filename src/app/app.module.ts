@@ -34,7 +34,6 @@ import { MoeKindergardenComponent } from './moe-kindergarden/moe-kindergarden.co
 import { SitemapComponent } from './sitemap/sitemap.component';
 import { PostAdsComponent } from './post-ads/post-ads.component';
 import { PropertyGrcComponent } from './property-grc/property-grc.component';
-import { SchoolRankComponent } from './school-rank/school-rank.component';
 import { DashboardGepComponent } from './dashboard-gep/dashboard-gep.component';
 import { EduBlogComponent } from './edu-blog/edu-blog.component';
 
@@ -62,7 +61,6 @@ import { EduBlogComponent } from './edu-blog/edu-blog.component';
     SitemapComponent,
     PostAdsComponent,
     PropertyGrcComponent,
-    SchoolRankComponent,
     DashboardGepComponent,
     EduBlogComponent
   ],
