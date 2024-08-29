@@ -26,8 +26,13 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+
 ## Publish code 1
+nvm use 16.20.2
 ng build --prod --base-href "/"
-ngh --no-silent --branch=master --cname=snowballdata.com
+npx angular-cli-ghpages --no-silent --branch=master --cname=snowballdata.com
+
 
 Use personal access token instead of password to publish page
+
+downgrade node version
