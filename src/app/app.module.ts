@@ -24,7 +24,6 @@ import { ChartsModule } from 'ng2-charts';
 import { AgGridModule } from 'ag-grid-angular';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { DashboardBallotComponent } from './dashboard-ballot/dashboard-ballot.component';
-import { DonationComponent } from './donation/donation.component';
 import { FooterComponent } from './footer/footer.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
@@ -33,7 +32,6 @@ import { PropertyTransactionComponent } from './property-transaction/property-tr
 import { MoeKindergardenComponent } from './moe-kindergarden/moe-kindergarden.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
 import { PostAdsComponent } from './post-ads/post-ads.component';
-import { PropertyGrcComponent } from './property-grc/property-grc.component';
 import { DashboardGepComponent } from './dashboard-gep/dashboard-gep.component';
 import { EduBlogComponent } from './edu-blog/edu-blog.component';
 
@@ -51,7 +49,6 @@ import { EduBlogComponent } from './edu-blog/edu-blog.component';
     DashboardAnalysisComponent,
     SideBarComponent,
     DashboardBallotComponent,
-    DonationComponent,
     FooterComponent,
     PrivacyComponent,
     TermsComponent,
@@ -60,7 +57,6 @@ import { EduBlogComponent } from './edu-blog/edu-blog.component';
     MoeKindergardenComponent,
     SitemapComponent,
     PostAdsComponent,
-    PropertyGrcComponent,
     DashboardGepComponent,
     EduBlogComponent
   ],

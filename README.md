@@ -28,7 +28,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ## Publish code 1
-nvm use 16.20.2
+nvm use 18.20.4
+export NODE_OPTIONS=--openssl-legacy-provider
 ng build --prod --base-href "/"
 npx angular-cli-ghpages --no-silent --branch=master --cname=snowballdata.com
 
