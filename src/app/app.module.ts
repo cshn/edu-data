@@ -11,8 +11,6 @@ import { SchoolSearchComponent } from './school-search/school-search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component'; 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CallbackComponent } from './callback/callback.component';
-import { ProfileComponent } from './profile/profile.component';
 import { DashboardSchoolComponent } from './dashboard-school/dashboard-school.component';
 import { SchoolSearchByschoolComponent } from './school-search-byschool/school-search-byschool.component';
 import { DashboardAnalysisComponent } from './dashboard-analysis/dashboard-analysis.component';
@@ -22,18 +20,12 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { ChartsModule } from 'ng2-charts';
 import { AgGridModule } from 'ag-grid-angular';
-import { SideBarComponent } from './side-bar/side-bar.component';
 import { DashboardBallotComponent } from './dashboard-ballot/dashboard-ballot.component';
 import { FooterComponent } from './footer/footer.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TermsComponent } from './terms/terms.component';
-import { PropertyNearSchoolComponent } from './property-near-school/property-near-school.component';
-import { PropertyTransactionComponent } from './property-transaction/property-transaction.component';
-import { MoeKindergardenComponent } from './moe-kindergarden/moe-kindergarden.component';
 import { SitemapComponent } from './sitemap/sitemap.component';
-import { PostAdsComponent } from './post-ads/post-ads.component';
 import { DashboardGepComponent } from './dashboard-gep/dashboard-gep.component';
-import { EduBlogComponent } from './edu-blog/edu-blog.component';
 
 @NgModule({
   declarations: [
@@ -42,23 +34,15 @@ import { EduBlogComponent } from './edu-blog/edu-blog.component';
     NavbarComponent,
     SchoolSearchComponent,
     DashboardComponent,
-    CallbackComponent,
-    ProfileComponent,
     DashboardSchoolComponent,
     SchoolSearchByschoolComponent,
     DashboardAnalysisComponent,
-    SideBarComponent,
     DashboardBallotComponent,
     FooterComponent,
     PrivacyComponent,
     TermsComponent,
-    PropertyNearSchoolComponent,
-    PropertyTransactionComponent,
-    MoeKindergardenComponent,
     SitemapComponent,
-    PostAdsComponent,
-    DashboardGepComponent,
-    EduBlogComponent
+    DashboardGepComponent
   ],
   imports: [
     BrowserModule,
